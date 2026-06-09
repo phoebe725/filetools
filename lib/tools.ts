@@ -372,24 +372,28 @@ export const TOOLS: Tool[] = [
     name: "Compress PDF",
     tagline: "Reduce PDF file size.",
     category: "pdf",
-    status: "soon",
+    status: "live",
     icon: "📉",
-    title: "Compress PDF — Reduce PDF File Size (Coming Soon)",
+    title: "Compress PDF — Reduce PDF File Size Online (Free, In-Browser)",
     description:
-      "Compress PDF files to reduce their size. Coming soon — a private, in-browser PDF compressor.",
+      "Compress PDF files to reduce their size, right in your browser. Best for scanned or image-heavy PDFs. Free and private.",
     h1: "Compress PDF",
     intro:
-      "Reduce the file size of large PDFs for easier sharing and emailing. This tool is in development.",
+      "Reduce the file size of large PDFs for easier sharing and emailing. This works by rasterising pages, so it's most effective on scanned or image-heavy documents — and it runs entirely in your browser.",
     howItWorks: [
       "Upload a PDF.",
-      "Choose a compression level.",
-      "Compress (coming soon).",
-      "Download the smaller PDF.",
+      "Choose a compression level (strong, balanced, or light).",
+      "Click Compress — pages are re-rendered and re-saved locally.",
+      "Download the smaller PDF and compare the before/after size.",
     ],
     faqs: [
       {
-        q: "When will this be available?",
-        a: "Soon. In-browser PDF compression is technically tricky, so we're getting it right before release.",
+        q: "Will the text still be selectable?",
+        a: "No. Compression rasterises each page (text becomes part of the image), which is why it shrinks scanned PDFs so well but isn't ideal for text-only documents.",
+      },
+      {
+        q: "Why didn't my PDF get smaller?",
+        a: "Text-only PDFs are already compact. This tool gives the biggest savings on scans and photo-heavy PDFs.",
       },
     ],
     related: ["merge-pdf", "split-pdf", "images-to-pdf"],
@@ -497,28 +501,37 @@ export const TOOLS: Tool[] = [
   {
     slug: "ocr-pdf",
     name: "OCR PDF",
-    tagline: "Turn scanned PDFs into searchable text.",
+    tagline: "Extract text from scanned PDFs & images.",
     category: "pdf",
-    status: "soon",
+    status: "live",
     icon: "🔎",
-    title: "OCR PDF — Scanned PDF to Text (Coming Soon)",
+    title: "OCR PDF — Scanned PDF & Image to Text (Free, In-Browser)",
     description:
-      "Recognize text in scanned PDFs and make them searchable. Coming soon.",
-    h1: "OCR — Scanned PDF to Text",
+      "Recognise text in scanned PDFs and images and copy or download it as plain text. Runs entirely in your browser — free and private.",
+    h1: "OCR — Scanned PDF & Image to Text",
     intro:
-      "Extract text from scanned documents and image-based PDFs. This tool is in development.",
+      "Pull the text out of scanned documents, photos, and image-based PDFs using on-device OCR. Everything runs locally in your browser, so your documents stay private. English language.",
     howItWorks: [
-      "Upload a scanned PDF.",
-      "Run OCR (coming soon).",
-      "Download a searchable PDF or text.",
+      "Upload a scanned PDF or images (PNG/JPG).",
+      "Click Extract text — the first run downloads the recognition engine (~10 MB).",
+      "Each page is read locally on your device.",
+      "Copy the text or download it as a .txt file.",
     ],
     faqs: [
       {
-        q: "Will OCR run in my browser?",
-        a: "That's the plan — fully local OCR so your documents stay private.",
+        q: "Does OCR run in my browser?",
+        a: "Yes — it uses Tesseract (WebAssembly) entirely on your device. Your files are never uploaded.",
+      },
+      {
+        q: "Which languages are supported?",
+        a: "Currently English. The engine downloads its language model on first use, then caches it.",
+      },
+      {
+        q: "Why is the first run slow?",
+        a: "The recognition engine and English model (~10 MB) download once on first use. After that it's much faster.",
       },
     ],
-    related: ["pdf-to-word", "pdf-to-images", "compress-pdf"],
+    related: ["pdf-to-images", "compress-pdf", "split-pdf"],
   },
   {
     slug: "edit-pdf-text",

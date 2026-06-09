@@ -60,6 +60,14 @@ const LIVE_COMPONENTS: Record<string, ComponentType> = {
     ssr: false,
     loading: Loading,
   }),
+  "compress-pdf": dynamic(() => import("./clients/CompressPdf"), {
+    ssr: false,
+    loading: Loading,
+  }),
+  "ocr-pdf": dynamic(() => import("./clients/OcrPdf"), {
+    ssr: false,
+    loading: Loading,
+  }),
 };
 
 // Config for phase-2 placeholders and coming-soon tools, all rendered through
@@ -73,12 +81,6 @@ interface SoonConfig {
 
 const SOON_CONFIG: Record<string, SoonConfig> = {
   // honest coming-soon
-  "compress-pdf": {
-    accept: ["application/pdf", ".pdf"],
-    hint: "A single PDF",
-    multiple: false,
-    actionLabel: "Compress PDF",
-  },
   "pdf-to-word": {
     accept: ["application/pdf", ".pdf"],
     hint: "A single PDF",
@@ -102,12 +104,6 @@ const SOON_CONFIG: Record<string, SoonConfig> = {
     hint: "A single PDF",
     multiple: false,
     actionLabel: "Convert to PowerPoint",
-  },
-  "ocr-pdf": {
-    accept: ["application/pdf", ".pdf"],
-    hint: "A scanned PDF",
-    multiple: false,
-    actionLabel: "Run OCR",
   },
   "edit-pdf-text": {
     accept: ["application/pdf", ".pdf"],

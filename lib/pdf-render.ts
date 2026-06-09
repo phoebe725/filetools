@@ -82,6 +82,47 @@ export async function renderPdfToImages(
   return out;
 }
 
+export interface JpegPage {
+  bytes: ArrayBuffer;
+  /** Original page size in PDF points (72 dpi), so the rebuilt page prints true. */
+  widthPt: number;
+  heightPt: number;
+}
+
+/** Rasterises each page to a JPEG (used by Compress PDF). */
+export async function renderPdfToJpegPages(
+  file: File,
+  scale: number,
+  quality: number,
+  onProgress?: (done: number, total: number) => void
+): Promise<JpegPage[]> {
+  const pdfjs = await loadPdfjs();
+  const data = await file.arrayBuffer();
+  const doc = await pdfjs.getDocument({ data }).promise;
+  const out: JpegPage[] = [];
+  try {
+    for (let i = 1; i <= doc.numPages; i++) {
+      const page = await doc.getPage(i);
+      const pointViewport = page.getViewport({ scale: 1 });
+      const canvas = await renderToCanvas(page, scale);
+      const blob = await new Promise<Blob | null>((res) =>
+        canvas.toBlob(res, "image/jpeg", quality)
+      );
+      if (!blob) throw new Error(`Could not render page ${i}.`);
+      out.push({
+        bytes: await blob.arrayBuffer(),
+        widthPt: pointViewport.width,
+        heightPt: pointViewport.height,
+      });
+      page.cleanup();
+      onProgress?.(i, doc.numPages);
+    }
+  } finally {
+    await doc.destroy();
+  }
+  return out;
+}
+
 export interface PdfThumbnail {
   pageNumber: number;
   dataUrl: string;
