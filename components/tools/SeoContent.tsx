@@ -1,9 +1,9 @@
 import type { Faq } from "@/lib/tools";
 
-export function HowItWorks({ steps }: { steps: string[] }) {
+export function HowItWorks({ steps, heading }: { steps: string[]; heading: string }) {
   return (
     <section aria-labelledby="how-heading" className="prose-tool">
-      <h2 id="how-heading">How it works</h2>
+      <h2 id="how-heading">{heading}</h2>
       <ol className="list-decimal space-y-2 pl-5 text-slate-600">
         {steps.map((step, i) => (
           <li key={i} className="leading-relaxed">
@@ -15,11 +15,11 @@ export function HowItWorks({ steps }: { steps: string[] }) {
   );
 }
 
-export function FaqSection({ faqs }: { faqs: Faq[] }) {
+export function FaqSection({ faqs, heading }: { faqs: Faq[]; heading: string }) {
   if (faqs.length === 0) return null;
   return (
     <section aria-labelledby="faq-heading" className="prose-tool">
-      <h2 id="faq-heading">Frequently asked questions</h2>
+      <h2 id="faq-heading">{heading}</h2>
       <div className="divide-y divide-slate-200 rounded-xl border border-slate-200 bg-white">
         {faqs.map((faq, i) => (
           <details key={i} className="group p-4">

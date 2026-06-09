@@ -7,9 +7,12 @@ import { PrivacyNote } from "@/components/PrivacyNote";
 import { AdSlot } from "@/components/AdSlot";
 import { RelatedTools } from "@/components/tools/RelatedTools";
 import { HowItWorks, FaqSection, FaqJsonLd } from "@/components/tools/SeoContent";
+import { locales, isLocale, defaultLocale, SITE_URL } from "@/lib/i18n/config";
+import { getMessages } from "@/lib/i18n/messages";
+import { getToolContent } from "@/lib/i18n/tool-content";
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }
 
 export function generateStaticParams() {
@@ -17,67 +20,71 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const tool = getTool(slug);
-  if (!tool) return {};
+  const { locale: raw, slug } = await params;
+  const locale = isLocale(raw) ? raw : defaultLocale;
+  const content = getToolContent(slug, locale);
+  if (!content) return {};
   return {
-    title: tool.title,
-    description: tool.description,
-    alternates: { canonical: `/tools/${tool.slug}` },
+    title: content.title,
+    description: content.description,
+    alternates: {
+      canonical: `${SITE_URL}/${locale}/tools/${slug}`,
+      languages: Object.fromEntries(
+        locales.map((l) => [l, `${SITE_URL}/${l}/tools/${slug}`])
+      ),
+    },
     openGraph: {
-      title: tool.title,
-      description: tool.description,
-      url: `/tools/${tool.slug}`,
+      title: content.title,
+      description: content.description,
+      url: `${SITE_URL}/${locale}/tools/${slug}`,
     },
   };
 }
 
 export default async function ToolPage({ params }: PageProps) {
-  const { slug } = await params;
-  const tool = getTool(slug);
-  if (!tool) notFound();
+  const { locale: raw, slug } = await params;
+  const locale = isLocale(raw) ? raw : defaultLocale;
+  const base = getTool(slug);
+  const content = getToolContent(slug, locale);
+  if (!base || !content) notFound();
+
+  const t = getMessages(locale);
 
   return (
     <article className="container-page py-8 lg:py-12">
-      <FaqJsonLd faqs={tool.faqs} />
+      <FaqJsonLd faqs={content.faqs} />
 
-      {/* Breadcrumb */}
       <nav className="mb-4 text-sm text-slate-500">
-        <Link href="/" className="hover:text-slate-800">
-          Home
+        <Link href={`/${locale}`} className="hover:text-slate-800">
+          {t.tool.home}
         </Link>
         <span className="mx-1.5">/</span>
-        <span className="text-slate-700">{tool.name}</span>
+        <span className="text-slate-700">{content.name}</span>
       </nav>
 
       <header className="mb-6 max-w-2xl">
         <h1 className="flex items-center gap-3 text-3xl font-bold text-slate-900">
-          <span aria-hidden>{tool.icon}</span>
-          {tool.h1}
+          <span aria-hidden>{base.icon}</span>
+          {content.h1}
         </h1>
-        <p className="mt-3 text-lg text-slate-600">{tool.intro}</p>
+        <p className="mt-3 text-lg text-slate-600">{content.intro}</p>
       </header>
 
       <AdSlot placement="tool-top" />
 
       <div className="my-6 grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px]">
-        {/* Tool workflow */}
         <div className="flex flex-col gap-4">
-          <PrivacyNote />
-          <ToolClient slug={tool.slug} />
+          <PrivacyNote text={t.privacyNote} />
+          <ToolClient slug={base.slug} />
         </div>
 
-        {/* Sidebar — sticky side-rail ad on desktop for more viewable impressions */}
         <aside>
           <div className="flex flex-col gap-6 lg:sticky lg:top-20">
             <div className="rounded-xl border border-slate-200 bg-white p-5">
               <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
-                100% private
+                {t.tool.privateHeading}
               </h2>
-              <p className="text-sm text-slate-600">
-                Everything runs in your browser using your device&apos;s own
-                processing. No uploads, no storage, no sign-up.
-              </p>
+              <p className="text-sm text-slate-600">{t.tool.privateBody}</p>
             </div>
             <AdSlot placement="sidebar" />
           </div>
@@ -85,11 +92,11 @@ export default async function ToolPage({ params }: PageProps) {
       </div>
 
       <div className="max-w-2xl space-y-2">
-        <HowItWorks steps={tool.howItWorks} />
-        <FaqSection faqs={tool.faqs} />
+        <HowItWorks steps={content.howItWorks} heading={t.tool.howItWorks} />
+        <FaqSection faqs={content.faqs} heading={t.tool.faq} />
       </div>
 
-      <RelatedTools slugs={tool.related} />
+      <RelatedTools slugs={base.related} locale={locale} heading={t.tool.related} />
 
       <div className="mt-12">
         <AdSlot placement="tool-bottom" />

@@ -1,22 +1,38 @@
 import type { MetadataRoute } from "next";
 import { TOOLS } from "@/lib/tools";
-
-const BASE = "https://filetools.example.com";
+import { locales, SITE_URL } from "@/lib/i18n/config";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPages = ["", "/privacy", "/terms", "/contact"].map((path) => ({
-    url: `${BASE}${path}`,
-    changeFrequency: "monthly" as const,
-    priority: path === "" ? 1 : 0.5,
-  }));
+  const entries: MetadataRoute.Sitemap = [];
+  const staticPaths = ["", "/privacy", "/terms", "/contact"];
 
-  const toolPages = TOOLS.map((tool) => ({
-    url: `${BASE}/tools/${tool.slug}`,
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
-  }));
-
-  return [...staticPages, ...toolPages];
+  for (const locale of locales) {
+    for (const path of staticPaths) {
+      entries.push({
+        url: `${SITE_URL}/${locale}${path}`,
+        changeFrequency: "monthly",
+        priority: path === "" ? 1 : 0.4,
+        alternates: {
+          languages: Object.fromEntries(
+            locales.map((l) => [l, `${SITE_URL}/${l}${path}`])
+          ),
+        },
+      });
+    }
+    for (const tool of TOOLS) {
+      entries.push({
+        url: `${SITE_URL}/${locale}/tools/${tool.slug}`,
+        changeFrequency: "monthly",
+        priority: 0.8,
+        alternates: {
+          languages: Object.fromEntries(
+            locales.map((l) => [l, `${SITE_URL}/${l}/tools/${tool.slug}`])
+          ),
+        },
+      });
+    }
+  }
+  return entries;
 }

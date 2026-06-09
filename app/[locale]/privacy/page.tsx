@@ -1,0 +1,36 @@
+import type { Metadata } from "next";
+import { isLocale, defaultLocale } from "@/lib/i18n/config";
+import { getMessages } from "@/lib/i18n/messages";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale: raw } = await params;
+  const locale = isLocale(raw) ? raw : defaultLocale;
+  const p = getMessages(locale).legal.privacy;
+  return { title: p.title, description: p.sections[0]?.body };
+}
+
+export default async function PrivacyPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale: raw } = await params;
+  const locale = isLocale(raw) ? raw : defaultLocale;
+  const p = getMessages(locale).legal.privacy;
+  return (
+    <div className="container-page max-w-2xl py-12 prose-tool">
+      <h1 className="text-3xl font-bold text-slate-900">{p.title}</h1>
+      <p className="mt-2 text-sm text-slate-500">{p.updated}</p>
+      {p.sections.map((s, i) => (
+        <div key={i}>
+          <h2>{s.heading}</h2>
+          <p>{s.body}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
