@@ -1,0 +1,5 @@
+# ads.txt — replace the publisher id below with YOUR AdSense pub id
+# (the same digits as NEXT_PUBLIC_ADSENSE_CLIENT, but written "pub-..." not "ca-pub-...").
+# This file is served at https://yourdomain.com/ads.txt and is required by
+# AdSense to authorise your account to sell ad space on this domain.
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
