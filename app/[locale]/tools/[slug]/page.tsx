@@ -7,6 +7,9 @@ import { PrivacyNote } from "@/components/PrivacyNote";
 import { AdSlot } from "@/components/AdSlot";
 import { RelatedTools } from "@/components/tools/RelatedTools";
 import { TrustBlock } from "@/components/tools/TrustBlock";
+import { PartnerCTA } from "@/components/affiliate/PartnerCTA";
+import { AffiliateDisclosure } from "@/components/affiliate/AffiliateDisclosure";
+import { getPartner } from "@/lib/affiliate";
 import {
   HowItWorks,
   FaqSection,
@@ -55,6 +58,8 @@ export default async function ToolPage({ params }: PageProps) {
   if (!base || !content) notFound();
 
   const t = getMessages(locale);
+  const partner = getPartner(base.slug);
+  const hasPartner = !!partner && partner.url !== "#";
 
   return (
     <article className="container-page py-8 lg:py-12">
@@ -101,6 +106,18 @@ export default async function ToolPage({ params }: PageProps) {
               </h2>
               <p className="text-sm text-slate-600">{t.tool.privateBody}</p>
             </div>
+            {hasPartner && (
+              <div className="flex flex-col gap-2">
+                <PartnerCTA
+                  heading={t.affiliate.ctaHeading}
+                  body={t.affiliate.ctaBody}
+                  cta={t.affiliate.ctaButton}
+                  url={partner!.url}
+                  network={partner!.network}
+                />
+                <AffiliateDisclosure text={t.affiliate.disclosure} />
+              </div>
+            )}
             <AdSlot placement="sidebar" />
           </div>
         </aside>

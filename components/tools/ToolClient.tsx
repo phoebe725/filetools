@@ -5,12 +5,16 @@ import type { ComponentType } from "react";
 import { ProgressBar } from "./ProgressBar";
 import { ComingSoonTool } from "./ComingSoonTool";
 import { getTool } from "@/lib/tools";
+import { useWidgets } from "@/components/I18nProvider";
 
-const Loading = () => (
-  <div className="rounded-xl border border-slate-200 bg-white p-8">
-    <ProgressBar label="Loading tool…" />
-  </div>
-);
+function Loading() {
+  const w = useWidgets();
+  return (
+    <div className="rounded-xl border border-slate-200 bg-white p-8">
+      <ProgressBar label={w.loadingTool} />
+    </div>
+  );
+}
 
 // Heavy, browser-only tool widgets are loaded on the client only (ssr: false),
 // which keeps PDF/image libraries out of the static HTML and initial bundle.

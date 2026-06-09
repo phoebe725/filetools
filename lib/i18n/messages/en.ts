@@ -40,6 +40,55 @@ const en = {
   },
   privacyNote:
     "Your files are processed in your browser and never leave your device.",
+  // Generic labels used inside the interactive tool widgets.
+  widgets: {
+    dropTitleMulti: "Drag & drop files here",
+    dropTitleSingle: "Drag & drop a file here",
+    browse: "or click to browse",
+    remove: "Remove",
+    moveUp: "Move up",
+    moveDown: "Move down",
+    working: "Working…",
+    loadingTool: "Loading tool…",
+    ready: "Your file is ready",
+    download: "Download",
+    startOver: "Start over",
+    was: "was",
+    smaller: "smaller",
+    larger: "larger",
+    dismiss: "Dismiss",
+    bestEffort: "Best-effort conversion:",
+    comingSoonBanner: "This tool is in development and not available yet.",
+    betaConversion: "🚧 Beta — this conversion is coming soon.",
+    emailDemo:
+      "We're still building this one. Leave your email and we'll let you know the moment it's ready.",
+    emailPlaceholder: "you@example.com",
+    notifyMe: "Notify me",
+    notifyThanks: "Thanks! We'll be in touch. (This is a UI demo and isn't stored.)",
+  },
+  // Affiliate / partner copy (Prompt B). Shown only on hard-feature pages.
+  affiliate: {
+    disclosure:
+      "Some links on this page are affiliate links. If you buy through them we may earn a commission, at no extra cost to you.",
+    ctaHeading: "Need a perfect conversion every time?",
+    ctaBody:
+      "This in-browser tool is free and best-effort. For pixel-perfect results on complex or large files, a dedicated desktop app can do more.",
+    ctaButton: "See recommended tool",
+  },
+  // Cookie-consent banner (CMP). Ads/analytics load only after acceptance.
+  consent: {
+    message:
+      "We use cookies for analytics and, in the future, advertising. You can accept or reject non-essential cookies.",
+    accept: "Accept",
+    reject: "Reject",
+    learnMore: "Privacy policy",
+  },
+  // Language suggestion banner — detect & suggest only, never auto-redirect.
+  suggest: {
+    prompt: "View this site in {lang}?",
+    accept: "Switch to {lang}",
+    dismiss: "No thanks",
+  },
   notFound: {
     title: "Page not found",
     body: "That tool or page doesn't exist (yet).",

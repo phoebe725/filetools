@@ -5,6 +5,7 @@ import { UploadDropzone } from "./UploadDropzone";
 import { FileList, type FileListItem } from "./FileList";
 import { ErrorState } from "./ErrorState";
 import { ActionButton } from "./DownloadButton";
+import { useWidgets } from "@/components/I18nProvider";
 
 interface ComingSoonToolProps {
   /** Accepted types, e.g. ["application/pdf"] or [".docx"]. Empty = any. */
@@ -31,6 +32,7 @@ export function ComingSoonTool({
   const [submitted, setSubmitted] = useState(false);
   const [email, setEmail] = useState("");
   const [notified, setNotified] = useState(false);
+  const w = useWidgets();
 
   const addFiles = (files: File[]) => {
     const mapped = files.map((f, i) => ({
@@ -45,7 +47,7 @@ export function ComingSoonTool({
   return (
     <div className="flex flex-col gap-4">
       <div className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-2.5 text-sm font-medium text-amber-800">
-        🚧 This tool is in development and not available yet.
+        🚧 {w.comingSoonBanner}
       </div>
 
       <UploadDropzone
@@ -71,17 +73,10 @@ export function ComingSoonTool({
 
       {submitted && (
         <div className="flex flex-col gap-4 rounded-xl border border-amber-200 bg-amber-50 p-5 text-center">
-          <p className="text-lg font-semibold text-amber-900">
-            🚧 Beta — this conversion is coming soon.
-          </p>
-          <p className="text-sm text-amber-800">
-            We&apos;re still building this one. Leave your email and we&apos;ll let you
-            know the moment it&apos;s ready.
-          </p>
+          <p className="text-lg font-semibold text-amber-900">{w.betaConversion}</p>
+          <p className="text-sm text-amber-800">{w.emailDemo}</p>
           {notified ? (
-            <p className="text-sm font-medium text-emerald-700">
-              Thanks! We&apos;ll be in touch. (This is a UI demo and isn&apos;t stored.)
-            </p>
+            <p className="text-sm font-medium text-emerald-700">{w.notifyThanks}</p>
           ) : (
             <form
               className="mx-auto flex w-full max-w-sm flex-col gap-2 sm:flex-row"
@@ -96,14 +91,14 @@ export function ComingSoonTool({
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@example.com"
+                placeholder={w.emailPlaceholder}
                 className="flex-1 rounded-lg border border-slate-300 px-3 py-2 text-sm"
               />
               <button
                 type="submit"
                 className="rounded-lg bg-amber-600 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-700"
               >
-                Notify me
+                {w.notifyMe}
               </button>
             </form>
           )}

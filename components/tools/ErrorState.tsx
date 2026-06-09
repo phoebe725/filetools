@@ -1,5 +1,7 @@
 "use client";
 
+import { useWidgets } from "@/components/I18nProvider";
+
 interface ErrorStateProps {
   /** A single message or several. */
   messages: string | string[];
@@ -7,6 +9,7 @@ interface ErrorStateProps {
 }
 
 export function ErrorState({ messages, onDismiss }: ErrorStateProps) {
+  const w = useWidgets();
   const list = Array.isArray(messages) ? messages : [messages];
   if (list.length === 0) return null;
   return (
@@ -31,7 +34,7 @@ export function ErrorState({ messages, onDismiss }: ErrorStateProps) {
       {onDismiss && (
         <button
           type="button"
-          aria-label="Dismiss"
+          aria-label={w.dismiss}
           onClick={onDismiss}
           className="text-red-400 hover:text-red-700"
         >

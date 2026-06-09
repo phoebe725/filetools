@@ -1,6 +1,7 @@
-import { type Messages } from "./en";
+import type { Messages } from "./en";
+import type { DeepPartial } from "./types";
 
-const fr: Messages = {
+const fr: DeepPartial<Messages> = {
   nav: {
     pdf: "PDF",
     image: "Image",
@@ -38,6 +39,47 @@ const fr: Messages = {
   },
   privacyNote:
     "Vos fichiers sont traités dans votre navigateur et ne quittent jamais votre appareil.",
+  widgets: {
+    dropTitleMulti: "Glissez-déposez vos fichiers ici",
+    dropTitleSingle: "Glissez-déposez un fichier ici",
+    browse: "ou cliquez pour parcourir",
+    remove: "Supprimer",
+    moveUp: "Monter",
+    moveDown: "Descendre",
+    working: "Traitement en cours…",
+    loadingTool: "Chargement de l'outil…",
+    ready: "Votre fichier est prêt",
+    download: "Télécharger",
+    startOver: "Recommencer",
+    was: "était de",
+    smaller: "plus petit",
+    larger: "plus grand",
+    dismiss: "Fermer",
+    bestEffort: "Conversion au mieux :",
+    comingSoonBanner: "Cet outil est en cours de développement et n'est pas encore disponible.",
+    betaConversion: "🚧 Bêta — cette conversion arrive bientôt.",
+    emailDemo: "Nous sommes encore en train de créer cet outil. Laissez-nous votre e-mail et nous vous préviendrons dès qu'il sera prêt.",
+    emailPlaceholder: "you@example.com",
+    notifyMe: "Me prévenir",
+    notifyThanks: "Merci ! Nous vous tiendrons au courant. (Ceci est une démo d'interface et n'est pas enregistré.)",
+  },
+  affiliate: {
+    disclosure: "Certains liens sur cette page sont des liens affiliés. Si vous achetez par leur intermédiaire, nous pouvons percevoir une commission, sans coût supplémentaire pour vous.",
+    ctaHeading: "Besoin d'une conversion parfaite à chaque fois ?",
+    ctaBody: "Cet outil en ligne est gratuit et fonctionne au mieux. Pour des résultats parfaits au pixel près sur des fichiers complexes ou volumineux, une application de bureau dédiée peut en faire davantage.",
+    ctaButton: "Voir l'outil recommandé",
+  },
+  consent: {
+    message: "Nous utilisons des cookies pour les statistiques et, à l'avenir, pour la publicité. Vous pouvez accepter ou refuser les cookies non essentiels.",
+    accept: "Accepter",
+    reject: "Refuser",
+    learnMore: "Politique de confidentialité",
+  },
+  suggest: {
+    prompt: "Afficher ce site en {lang} ?",
+    accept: "Passer au {lang}",
+    dismiss: "Non merci",
+  },
   notFound: {
     title: "Page introuvable",
     body: "Cet outil ou cette page n'existe pas (encore).",

@@ -1,6 +1,7 @@
-import { type Messages } from "./en";
+import type { Messages } from "./en";
+import type { DeepPartial } from "./types";
 
-const zhHans: Messages = {
+const zhHans: DeepPartial<Messages> = {
   nav: {
     pdf: "PDF",
     image: "图片",
@@ -38,6 +39,47 @@ const zhHans: Messages = {
   },
   privacyNote:
     "你的文件在浏览器中处理，永不离开你的设备。",
+  widgets: {
+    dropTitleMulti: "将文件拖放到此处",
+    dropTitleSingle: "将文件拖放到此处",
+    browse: "或点击浏览",
+    remove: "移除",
+    moveUp: "上移",
+    moveDown: "下移",
+    working: "处理中…",
+    loadingTool: "正在加载工具…",
+    ready: "你的文件已就绪",
+    download: "下载",
+    startOver: "重新开始",
+    was: "原本",
+    smaller: "更小",
+    larger: "更大",
+    dismiss: "关闭",
+    bestEffort: "尽力转换：",
+    comingSoonBanner: "此工具正在开发中，暂未上线。",
+    betaConversion: "🚧 测试版 — 此转换功能即将推出。",
+    emailDemo: "我们仍在开发这项功能。留下你的邮箱，准备就绪时我们会第一时间通知你。",
+    emailPlaceholder: "you@example.com",
+    notifyMe: "通知我",
+    notifyThanks: "谢谢！我们会与你联系。（这只是界面演示，不会被存储。）",
+  },
+  affiliate: {
+    disclosure: "本页面上的部分链接为联盟推广链接。如果你通过它们购买，我们可能会获得佣金，而你无需支付额外费用。",
+    ctaHeading: "需要每次都完美转换？",
+    ctaBody: "这款浏览器内工具是免费的，并会尽力转换。如果你需要处理复杂或大型文件并获得像素级完美的结果，专用的桌面应用能做到更多。",
+    ctaButton: "查看推荐工具",
+  },
+  consent: {
+    message: "我们使用 Cookie 进行分析，未来也可能用于广告。你可以接受或拒绝非必要的 Cookie。",
+    accept: "接受",
+    reject: "拒绝",
+    learnMore: "隐私政策",
+  },
+  suggest: {
+    prompt: "以 {lang} 查看本网站？",
+    accept: "切换到 {lang}",
+    dismiss: "不用了",
+  },
   notFound: {
     title: "页面未找到",
     body: "该工具或页面（暂时）不存在。",

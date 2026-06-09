@@ -1,6 +1,7 @@
-import { type Messages } from "./en";
+import type { Messages } from "./en";
+import type { DeepPartial } from "./types";
 
-const ja: Messages = {
+const ja: DeepPartial<Messages> = {
   nav: {
     pdf: "PDF",
     image: "画像",
@@ -38,6 +39,52 @@ const ja: Messages = {
   },
   privacyNote:
     "ファイルはブラウザ内で処理され、お使いの端末から外に出ることはありません。",
+  widgets: {
+    dropTitleMulti: "ここにファイルをドラッグ＆ドロップ",
+    dropTitleSingle: "ここにファイルをドラッグ＆ドロップ",
+    browse: "またはクリックして選択",
+    remove: "削除",
+    moveUp: "上に移動",
+    moveDown: "下に移動",
+    working: "処理中…",
+    loadingTool: "ツールを読み込み中…",
+    ready: "ファイルの準備ができました",
+    download: "ダウンロード",
+    startOver: "最初からやり直す",
+    was: "元のサイズ：",
+    smaller: "小さくなりました",
+    larger: "大きくなりました",
+    dismiss: "閉じる",
+    bestEffort: "可能な範囲での変換：",
+    comingSoonBanner: "このツールは開発中で、まだご利用いただけません。",
+    betaConversion: "🚧 ベータ版 — この変換は近日公開予定です。",
+    emailDemo:
+      "このツールは現在開発中です。メールアドレスをご登録いただければ、準備ができ次第お知らせします。",
+    emailPlaceholder: "you@example.com",
+    notifyMe: "お知らせを受け取る",
+    notifyThanks:
+      "ありがとうございます！準備ができ次第ご連絡します。（これは UI のデモであり、入力内容は保存されません。）",
+  },
+  affiliate: {
+    disclosure:
+      "このページの一部のリンクはアフィリエイトリンクです。リンク経由でご購入いただいた場合、当社が手数料を受け取ることがありますが、お客様に追加の費用はかかりません。",
+    ctaHeading: "毎回完璧な変換が必要ですか？",
+    ctaBody:
+      "このブラウザ内ツールは無料で、可能な範囲での変換を行います。複雑なファイルや大きなファイルでピクセル単位まで完璧な結果が必要な場合は、専用のデスクトップアプリでより多くのことが可能です。",
+    ctaButton: "おすすめのツールを見る",
+  },
+  consent: {
+    message:
+      "当社はアナリティクスのため、また将来的には広告のために Cookie を使用します。必須ではない Cookie は、同意または拒否することができます。",
+    accept: "同意する",
+    reject: "拒否する",
+    learnMore: "プライバシーポリシー",
+  },
+  suggest: {
+    prompt: "このサイトを{lang}で表示しますか？",
+    accept: "{lang}に切り替える",
+    dismiss: "いいえ、結構です",
+  },
   notFound: {
     title: "ページが見つかりません",
     body: "そのツールまたはページは（まだ）存在しません。",

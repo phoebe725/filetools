@@ -1,28 +1,33 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
-import { locales, localeNames, isLocale, type Locale } from "@/lib/i18n/config";
+import {
+  locales,
+  localeNames,
+  replaceLocaleInPath,
+  LOCALE_STORAGE_KEY,
+  type Locale,
+} from "@/lib/i18n/config";
 
 interface Props {
   locale: Locale;
   label: string;
 }
 
-// Swaps the locale segment of the current path and navigates there, preserving
-// the rest of the route (e.g. /en/tools/merge-pdf → /es/tools/merge-pdf).
+// Swaps the locale segment of the current path AND remembers the choice, so the
+// root entry page can honour it later. We never auto-redirect by IP.
 export function LanguageSwitcher({ locale, label }: Props) {
   const pathname = usePathname();
   const router = useRouter();
 
   const switchTo = (next: Locale) => {
-    const segments = (pathname || "/").split("/");
-    // segments[0] === "" ; segments[1] is the current locale (if present).
-    if (segments[1] && isLocale(segments[1])) {
-      segments[1] = next;
-    } else {
-      segments.splice(1, 0, next);
+    try {
+      localStorage.setItem(LOCALE_STORAGE_KEY, next);
+      document.cookie = `${LOCALE_STORAGE_KEY}=${next};path=/;max-age=31536000;samesite=lax`;
+    } catch {
+      /* ignore */
     }
-    router.push(segments.join("/") || `/${next}`);
+    router.push(replaceLocaleInPath(pathname || "/", next));
   };
 
   return (

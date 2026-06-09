@@ -1,31 +1,20 @@
 import { locales, defaultLocale } from "@/lib/i18n/config";
 
-// Root entry. Static export can't do server redirects, so this page detects the
-// visitor's browser language on the client and forwards to the matching locale
-// (honouring the deployment's base path), falling back to English.
+// Root entry. Static export can't do server redirects, so this page forwards on
+// the client to the visitor's REMEMBERED language (set by the switcher), falling
+// back to English. We deliberately do NOT auto-detect by browser/IP here — the
+// LocaleSuggest banner handles detection as a non-intrusive suggestion instead.
 const detectScript = `
 (function () {
   var supported = ${JSON.stringify(locales)};
   var fallback = ${JSON.stringify(defaultLocale)};
   var base = location.pathname.replace(/\\/+$/, "");
-  function pick() {
-    var langs = navigator.languages || [navigator.language || ""];
-    for (var i = 0; i < langs.length; i++) {
-      var l = (langs[i] || "").toLowerCase();
-      if (l.indexOf("zh") === 0) {
-        return (l.indexOf("tw") > -1 || l.indexOf("hk") > -1 || l.indexOf("hant") > -1)
-          ? "zh-Hant" : "zh-Hans";
-      }
-      var two = l.split("-")[0];
-      for (var j = 0; j < supported.length; j++) {
-        if (supported[j].toLowerCase() === l || supported[j].toLowerCase() === two) {
-          return supported[j];
-        }
-      }
-    }
-    return fallback;
-  }
-  location.replace(base + "/" + pick());
+  var chosen = fallback;
+  try {
+    var stored = localStorage.getItem("${"ft_locale"}");
+    if (stored && supported.indexOf(stored) > -1) chosen = stored;
+  } catch (e) {}
+  location.replace(base + "/" + chosen);
 })();
 `;
 

@@ -2,6 +2,7 @@
 
 import { useCallback, useRef, useState } from "react";
 import { validateFiles, type ValidationOptions } from "@/lib/files";
+import { useWidgets } from "@/components/I18nProvider";
 
 interface UploadDropzoneProps extends ValidationOptions {
   /** Called with newly accepted files. */
@@ -29,6 +30,7 @@ export function UploadDropzone({
 }: UploadDropzoneProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [dragging, setDragging] = useState(false);
+  const w = useWidgets();
 
   const handleFiles = useCallback(
     (fileList: FileList | null) => {
@@ -83,9 +85,9 @@ export function UploadDropzone({
       </div>
       <div>
         <p className="font-semibold text-slate-800">
-          Drag &amp; drop {multiple ? "files" : "a file"} here
+          {multiple ? w.dropTitleMulti : w.dropTitleSingle}
         </p>
-        <p className="text-sm text-slate-500">or click to browse</p>
+        <p className="text-sm text-slate-500">{w.browse}</p>
       </div>
       {hint && <p className="text-xs text-slate-400">{hint}</p>}
       <input

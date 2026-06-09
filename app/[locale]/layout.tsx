@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { notFound } from "next/navigation";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { I18nProvider } from "@/components/I18nProvider";
+import { ConsentProvider } from "@/components/consent/ConsentContext";
+import { CookieConsent } from "@/components/consent/CookieConsent";
+import { AdScripts } from "@/components/consent/AdScripts";
+import { LocaleSuggest } from "@/components/LocaleSuggest";
 import { locales, isLocale, htmlLang, defaultLocale, SITE_URL } from "@/lib/i18n/config";
 import { getMessages } from "@/lib/i18n/messages";
-
-const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -46,18 +48,16 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   return (
     <html lang={htmlLang[locale]}>
       <body className="flex min-h-screen flex-col">
-        {ADSENSE_CLIENT && (
-          <Script
-            id="adsbygoogle-init"
-            async
-            strategy="afterInteractive"
-            crossOrigin="anonymous"
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-          />
-        )}
-        <Nav locale={locale} t={messages.nav} />
-        <main className="flex-1">{children}</main>
-        <Footer locale={locale} t={messages.footer} />
+        <I18nProvider locale={locale} messages={messages}>
+          <ConsentProvider>
+            <AdScripts />
+            <LocaleSuggest />
+            <Nav locale={locale} t={messages.nav} />
+            <main className="flex-1">{children}</main>
+            <Footer locale={locale} t={messages.footer} />
+            <CookieConsent />
+          </ConsentProvider>
+        </I18nProvider>
       </body>
     </html>
   );

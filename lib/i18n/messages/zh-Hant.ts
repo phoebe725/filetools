@@ -1,6 +1,7 @@
-import { type Messages } from "./en";
+import type { Messages } from "./en";
+import type { DeepPartial } from "./types";
 
-const zhHant: Messages = {
+const zhHant: DeepPartial<Messages> = {
   nav: {
     pdf: "PDF",
     image: "圖片",
@@ -38,6 +39,47 @@ const zhHant: Messages = {
   },
   privacyNote:
     "你的檔案在瀏覽器中處理，絕不離開你的裝置。",
+  widgets: {
+    dropTitleMulti: "將檔案拖放到這裡",
+    dropTitleSingle: "將檔案拖放到這裡",
+    browse: "或點選以瀏覽",
+    remove: "移除",
+    moveUp: "上移",
+    moveDown: "下移",
+    working: "處理中…",
+    loadingTool: "正在載入工具…",
+    ready: "你的檔案已就緒",
+    download: "下載",
+    startOver: "重新開始",
+    was: "原本",
+    smaller: "更小",
+    larger: "更大",
+    dismiss: "關閉",
+    bestEffort: "盡力轉換：",
+    comingSoonBanner: "這項工具仍在開發中，目前尚未推出。",
+    betaConversion: "🚧 Beta — 這項轉換即將推出。",
+    emailDemo: "我們還在開發這項功能。留下你的電子郵件，一旦準備好我們就會通知你。",
+    emailPlaceholder: "you@example.com",
+    notifyMe: "通知我",
+    notifyThanks: "謝謝！我們會再與你聯繫。（這只是 UI 示範，不會被儲存。）",
+  },
+  affiliate: {
+    disclosure: "本頁部分連結為聯盟行銷連結。若你透過這些連結購買，我們可能會獲得佣金，但你不需支付任何額外費用。",
+    ctaHeading: "需要每次都完美的轉換結果嗎？",
+    ctaBody: "這個瀏覽器內工具免費且盡力而為。若你需要在複雜或大型檔案上獲得像素級完美的結果，專屬的桌面應用程式能做得更多。",
+    ctaButton: "查看推薦工具",
+  },
+  consent: {
+    message: "我們使用 Cookie 進行分析，未來也可能用於廣告。你可以接受或拒絕非必要的 Cookie。",
+    accept: "接受",
+    reject: "拒絕",
+    learnMore: "隱私權政策",
+  },
+  suggest: {
+    prompt: "要以 {lang} 瀏覽本網站嗎？",
+    accept: "切換至 {lang}",
+    dismiss: "不用了，謝謝",
+  },
   notFound: {
     title: "找不到頁面",
     body: "這個工具或頁面（目前）不存在。",

@@ -44,6 +44,31 @@ export function isLocale(value: string): value is Locale {
   return (locales as readonly string[]).includes(value);
 }
 
+/** localStorage key remembering the visitor's chosen language. */
+export const LOCALE_STORAGE_KEY = "ft_locale";
+
+/** Swaps (or inserts) the locale segment of a path: /en/tools/x → /es/tools/x. */
+export function replaceLocaleInPath(pathname: string, next: Locale): string {
+  const segments = (pathname || "/").split("/");
+  if (segments[1] && isLocale(segments[1])) segments[1] = next;
+  else segments.splice(1, 0, next);
+  return segments.join("/") || `/${next}`;
+}
+
+/** Best supported locale for a browser language tag (e.g. "pt-BR" → "pt"). */
+export function matchLocale(tag: string): Locale | null {
+  const l = (tag || "").toLowerCase();
+  if (l.startsWith("zh")) {
+    return l.includes("tw") || l.includes("hk") || l.includes("hant")
+      ? "zh-Hant"
+      : "zh-Hans";
+  }
+  const two = l.split("-")[0];
+  return (
+    locales.find((s) => s.toLowerCase() === l || s.toLowerCase() === two) ?? null
+  );
+}
+
 // Absolute site URL used for canonical/hreflang/sitemap. Includes the GitHub
 // Pages base path at build time; change this one constant when moving to a
 // custom domain. (Only read server-side at build.)

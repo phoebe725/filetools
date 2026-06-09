@@ -1,6 +1,7 @@
 "use client";
 
 import { formatBytes } from "@/lib/files";
+import { useWidgets } from "@/components/I18nProvider";
 
 export interface FileListItem {
   id: string;
@@ -20,6 +21,7 @@ interface FileListProps {
 }
 
 export function FileList({ items, onRemove, onMove }: FileListProps) {
+  const w = useWidgets();
   if (items.length === 0) return null;
   return (
     <ul className="flex flex-col gap-2">
@@ -51,7 +53,7 @@ export function FileList({ items, onRemove, onMove }: FileListProps) {
             <div className="flex flex-col">
               <button
                 type="button"
-                aria-label="Move up"
+                aria-label={w.moveUp}
                 disabled={index === 0}
                 onClick={() => onMove(item.id, -1)}
                 className="px-1 text-slate-400 enabled:hover:text-slate-700 disabled:opacity-30"
@@ -60,7 +62,7 @@ export function FileList({ items, onRemove, onMove }: FileListProps) {
               </button>
               <button
                 type="button"
-                aria-label="Move down"
+                aria-label={w.moveDown}
                 disabled={index === items.length - 1}
                 onClick={() => onMove(item.id, 1)}
                 className="px-1 text-slate-400 enabled:hover:text-slate-700 disabled:opacity-30"
@@ -72,7 +74,7 @@ export function FileList({ items, onRemove, onMove }: FileListProps) {
           {onRemove && (
             <button
               type="button"
-              aria-label={`Remove ${item.name}`}
+              aria-label={`${w.remove} ${item.name}`}
               onClick={() => onRemove(item.id)}
               className="rounded-md px-2 py-1 text-sm text-slate-400 hover:bg-red-50 hover:text-red-600"
             >

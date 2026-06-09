@@ -1,6 +1,7 @@
-import { type Messages } from "./en";
+import type { Messages } from "./en";
+import type { DeepPartial } from "./types";
 
-const de: Messages = {
+const de: DeepPartial<Messages> = {
   nav: {
     pdf: "PDF",
     image: "Bild",
@@ -38,6 +39,47 @@ const de: Messages = {
   },
   privacyNote:
     "Ihre Dateien werden in Ihrem Browser verarbeitet und verlassen niemals Ihr Gerät.",
+  widgets: {
+    dropTitleMulti: "Dateien hier hinein ziehen und ablegen",
+    dropTitleSingle: "Datei hier hinein ziehen und ablegen",
+    browse: "oder klicken zum Durchsuchen",
+    remove: "Entfernen",
+    moveUp: "Nach oben",
+    moveDown: "Nach unten",
+    working: "Wird verarbeitet…",
+    loadingTool: "Tool wird geladen…",
+    ready: "Ihre Datei ist fertig",
+    download: "Herunterladen",
+    startOver: "Von vorn beginnen",
+    was: "war",
+    smaller: "kleiner",
+    larger: "größer",
+    dismiss: "Schließen",
+    bestEffort: "Bestmögliche Konvertierung:",
+    comingSoonBanner: "Dieses Tool ist in Entwicklung und noch nicht verfügbar.",
+    betaConversion: "🚧 Beta — diese Konvertierung kommt bald.",
+    emailDemo: "An diesem Tool arbeiten wir noch. Hinterlassen Sie Ihre E-Mail-Adresse, und wir benachrichtigen Sie, sobald es fertig ist.",
+    emailPlaceholder: "you@example.com",
+    notifyMe: "Benachrichtigen",
+    notifyThanks: "Danke! Wir melden uns. (Dies ist eine UI-Demo und wird nicht gespeichert.)",
+  },
+  affiliate: {
+    disclosure: "Einige Links auf dieser Seite sind Affiliate-Links. Wenn Sie darüber etwas kaufen, erhalten wir möglicherweise eine Provision — ohne Mehrkosten für Sie.",
+    ctaHeading: "Brauchen Sie jedes Mal eine perfekte Konvertierung?",
+    ctaBody: "Dieses Tool im Browser ist kostenlos und liefert das bestmögliche Ergebnis. Für pixelgenaue Resultate bei komplexen oder großen Dateien kann eine spezielle Desktop-App mehr leisten.",
+    ctaButton: "Empfohlenes Tool ansehen",
+  },
+  consent: {
+    message: "Wir verwenden Cookies für Analysen und künftig auch für Werbung. Sie können nicht notwendige Cookies akzeptieren oder ablehnen.",
+    accept: "Akzeptieren",
+    reject: "Ablehnen",
+    learnMore: "Datenschutzerklärung",
+  },
+  suggest: {
+    prompt: "Diese Website auf {lang} ansehen?",
+    accept: "Zu {lang} wechseln",
+    dismiss: "Nein danke",
+  },
   notFound: {
     title: "Seite nicht gefunden",
     body: "Dieses Tool oder diese Seite gibt es (noch) nicht.",

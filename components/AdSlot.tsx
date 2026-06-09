@@ -1,10 +1,11 @@
-// Ad slots. When AdSense is configured (env vars set) and a slot id exists for
-// the placement, a real AdSense unit renders. Otherwise a subtle, non-intrusive
-// placeholder reserves the space — so dev and pre-approval builds stay clean.
-//
-// Ads must never sit inside the upload box or over action buttons.
+"use client";
+
+// Ad slots reserve FIXED dimensions so enabling a network later causes no layout
+// shift. They render nothing until (a) a network is configured via env and
+// (b) the visitor has accepted cookies. Never place these in the conversion flow.
 
 import { AdSense } from "./AdSense";
+import { useConsent } from "./consent/ConsentContext";
 
 export type AdPlacement =
   | "tool-top"
@@ -14,7 +15,6 @@ export type AdPlacement =
 
 const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
 
-// Each placement maps to an ad-unit slot id created in the AdSense dashboard.
 const SLOTS: Record<AdPlacement, string | undefined> = {
   "tool-top": process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOP,
   "tool-bottom": process.env.NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM,
@@ -22,38 +22,36 @@ const SLOTS: Record<AdPlacement, string | undefined> = {
   sidebar: process.env.NEXT_PUBLIC_ADSENSE_SLOT_SIDEBAR,
 };
 
-const PLACEHOLDER_SIZES: Record<AdPlacement, string> = {
-  "tool-top": "min-h-[90px]",
-  "tool-bottom": "min-h-[120px]",
-  "content-inline": "min-h-[100px]",
-  sidebar: "min-h-[600px]",
+// Fixed, reserved dimensions per placement (prevents cumulative layout shift).
+const DIMS: Record<AdPlacement, string> = {
+  "tool-top": "h-[90px]",
+  "tool-bottom": "h-[120px]",
+  "content-inline": "h-[100px]",
+  sidebar: "h-[250px] lg:h-[600px]",
 };
 
-// Tall side rails read better as vertical units; the rest are responsive auto.
-const VERTICAL: AdPlacement[] = ["sidebar"];
-
 export function AdSlot({ placement }: { placement: AdPlacement }) {
+  const { consent } = useConsent();
   const slot = SLOTS[placement];
+  const configured = Boolean(ADSENSE_CLIENT && slot);
 
-  if (ADSENSE_CLIENT && slot) {
-    return (
-      <div className="w-full overflow-hidden" data-ad-placement={placement}>
-        <AdSense
-          client={ADSENSE_CLIENT}
-          slot={slot}
-          format={VERTICAL.includes(placement) ? "vertical" : "auto"}
-        />
-      </div>
-    );
-  }
+  // No network configured yet → render nothing (keeps the site clean now).
+  // Once env vars are set, the fixed box below reserves space immediately, so
+  // going live with ads introduces no layout shift.
+  if (!configured) return null;
 
   return (
     <div
-      aria-hidden="true"
       data-ad-placement={placement}
-      className={`flex w-full items-center justify-center rounded-lg border border-dashed border-slate-200 bg-slate-100/60 text-[11px] uppercase tracking-wide text-slate-400 ${PLACEHOLDER_SIZES[placement]}`}
+      className={`w-full overflow-hidden rounded-lg ${DIMS[placement]}`}
     >
-      Advertisement
+      {consent === "accepted" && (
+        <AdSense
+          client={ADSENSE_CLIENT as string}
+          slot={slot as string}
+          format={placement === "sidebar" ? "vertical" : "auto"}
+        />
+      )}
     </div>
   );
 }

@@ -1,6 +1,7 @@
-import { type Messages } from "./en";
+import type { Messages } from "./en";
+import type { DeepPartial } from "./types";
 
-const es: Messages = {
+const es: DeepPartial<Messages> = {
   nav: {
     pdf: "PDF",
     image: "Imagen",
@@ -38,6 +39,47 @@ const es: Messages = {
   },
   privacyNote:
     "Tus archivos se procesan en tu navegador y nunca salen de tu dispositivo.",
+  widgets: {
+    dropTitleMulti: "Arrastra y suelta archivos aquí",
+    dropTitleSingle: "Arrastra y suelta un archivo aquí",
+    browse: "o haz clic para examinar",
+    remove: "Quitar",
+    moveUp: "Subir",
+    moveDown: "Bajar",
+    working: "Procesando…",
+    loadingTool: "Cargando herramienta…",
+    ready: "Tu archivo está listo",
+    download: "Descargar",
+    startOver: "Empezar de nuevo",
+    was: "era",
+    smaller: "más pequeño",
+    larger: "más grande",
+    dismiss: "Descartar",
+    bestEffort: "Conversión aproximada:",
+    comingSoonBanner: "Esta herramienta está en desarrollo y aún no está disponible.",
+    betaConversion: "🚧 Beta: esta conversión estará disponible pronto.",
+    emailDemo: "Aún estamos creando esta. Déjanos tu correo y te avisaremos en cuanto esté lista.",
+    emailPlaceholder: "you@example.com",
+    notifyMe: "Avísame",
+    notifyThanks: "¡Gracias! Nos pondremos en contacto. (Esto es una demostración de la interfaz y no se almacena.)",
+  },
+  affiliate: {
+    disclosure: "Algunos enlaces de esta página son enlaces de afiliados. Si compras a través de ellos, podemos ganar una comisión, sin coste adicional para ti.",
+    ctaHeading: "¿Necesitas una conversión perfecta cada vez?",
+    ctaBody: "Esta herramienta en el navegador es gratuita y hace lo posible por dar buenos resultados. Para resultados perfectos en archivos complejos o grandes, una aplicación de escritorio dedicada puede ofrecer más.",
+    ctaButton: "Ver herramienta recomendada",
+  },
+  consent: {
+    message: "Usamos cookies para analíticas y, en el futuro, para publicidad. Puedes aceptar o rechazar las cookies no esenciales.",
+    accept: "Aceptar",
+    reject: "Rechazar",
+    learnMore: "Política de privacidad",
+  },
+  suggest: {
+    prompt: "¿Ver este sitio en {lang}?",
+    accept: "Cambiar a {lang}",
+    dismiss: "No, gracias",
+  },
   notFound: {
     title: "Página no encontrada",
     body: "Esa herramienta o página no existe (todavía).",
