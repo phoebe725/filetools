@@ -19,14 +19,14 @@ export function Nav({ locale, t }: NavProps) {
           <span className="text-lg">FileTools</span>
         </Link>
         <div className="flex items-center gap-1 text-sm font-medium text-slate-600">
+          <Link href={`/${locale}#convert`} className="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900">
+            {t.convert}
+          </Link>
           <Link href={`/${locale}#pdf`} className="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900">
             {t.pdf}
           </Link>
           <Link href={`/${locale}#image`} className="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900">
             {t.image}
-          </Link>
-          <Link href={`/${locale}#convert`} className="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900">
-            {t.convert}
           </Link>
           <LanguageSwitcher locale={locale} label={t.language} />
         </div>
