@@ -44,6 +44,22 @@ const LIVE_COMPONENTS: Record<string, ComponentType> = {
     ssr: false,
     loading: Loading,
   }),
+  "add-page-numbers": dynamic(() => import("./clients/AddPageNumbers"), {
+    ssr: false,
+    loading: Loading,
+  }),
+  "heic-to-jpg": dynamic(() => import("./clients/HeicToJpg"), {
+    ssr: false,
+    loading: Loading,
+  }),
+  "pdf-to-images": dynamic(() => import("./clients/PdfToImages"), {
+    ssr: false,
+    loading: Loading,
+  }),
+  "organize-pdf": dynamic(() => import("./clients/OrganizePdf"), {
+    ssr: false,
+    loading: Loading,
+  }),
 };
 
 // Config for phase-2 placeholders and coming-soon tools, all rendered through
@@ -56,31 +72,6 @@ interface SoonConfig {
 }
 
 const SOON_CONFIG: Record<string, SoonConfig> = {
-  // phase-2 placeholders
-  "heic-to-jpg": {
-    accept: [".heic", ".heif", "image/heic", "image/heif"],
-    hint: "HEIC / HEIF photos",
-    multiple: true,
-    actionLabel: "Convert to JPG",
-  },
-  "pdf-to-images": {
-    accept: ["application/pdf", ".pdf"],
-    hint: "A single PDF",
-    multiple: false,
-    actionLabel: "Export images",
-  },
-  "organize-pdf": {
-    accept: ["application/pdf", ".pdf"],
-    hint: "A single PDF",
-    multiple: false,
-    actionLabel: "Organize pages",
-  },
-  "add-page-numbers": {
-    accept: ["application/pdf", ".pdf"],
-    hint: "A single PDF",
-    multiple: false,
-    actionLabel: "Add page numbers",
-  },
   // honest coming-soon
   "compress-pdf": {
     accept: ["application/pdf", ".pdf"],

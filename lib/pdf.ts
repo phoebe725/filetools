@@ -1,7 +1,51 @@
 // PDF helpers built on pdf-lib. Imported dynamically by tool components so the
 // library stays out of the initial bundle.
 
-import { PDFDocument, degrees } from "pdf-lib";
+import { PDFDocument, StandardFonts, degrees, rgb } from "pdf-lib";
+
+export type PageNumberPosition =
+  | "bottom-center"
+  | "bottom-right"
+  | "bottom-left"
+  | "top-center"
+  | "top-right"
+  | "top-left";
+
+export interface PageNumberOptions {
+  position: PageNumberPosition;
+  startAt: number;
+  fontSize: number;
+  /** Inset from the page edge in points. */
+  margin?: number;
+}
+
+/** Stamps page numbers onto every page of a PDF. */
+export async function addPageNumbers(
+  file: File,
+  opts: PageNumberOptions
+): Promise<Blob> {
+  const { position, startAt, fontSize, margin = 28 } = opts;
+  const bytes = await file.arrayBuffer();
+  const doc = await PDFDocument.load(bytes);
+  const font = await doc.embedFont(StandardFonts.Helvetica);
+  const pages = doc.getPages();
+
+  pages.forEach((page, i) => {
+    const label = String(startAt + i);
+    const textWidth = font.widthOfTextAtSize(label, fontSize);
+    const { width, height } = page.getSize();
+    const isTop = position.startsWith("top");
+    const y = isTop ? height - margin - fontSize : margin;
+    let x: number;
+    if (position.endsWith("center")) x = (width - textWidth) / 2;
+    else if (position.endsWith("right")) x = width - margin - textWidth;
+    else x = margin;
+    page.drawText(label, { x, y, size: fontSize, font, color: rgb(0.2, 0.2, 0.2) });
+  });
+
+  const saved = await doc.save();
+  return pdfBlob(saved);
+}
 
 // pdf-lib's save() returns Uint8Array<ArrayBufferLike>, which current DOM lib
 // typings don't accept directly as a BlobPart. This wrapper keeps the cast in

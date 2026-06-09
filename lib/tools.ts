@@ -177,7 +177,7 @@ export const TOOLS: Tool[] = [
     name: "HEIC to JPG",
     tagline: "Convert iPhone HEIC photos to JPG.",
     category: "convert",
-    status: "phase2",
+    status: "live",
     icon: "📱",
     title: "HEIC to JPG Converter — iPhone Photos to JPG (Browser-Based)",
     description:
@@ -290,7 +290,7 @@ export const TOOLS: Tool[] = [
     name: "PDF to Images",
     tagline: "Export each PDF page as a PNG.",
     category: "pdf",
-    status: "phase2",
+    status: "live",
     icon: "🏞️",
     title: "PDF to Images — Convert PDF Pages to PNG (Browser-Based)",
     description:
@@ -317,7 +317,7 @@ export const TOOLS: Tool[] = [
     name: "Organize PDF",
     tagline: "Delete and reorder PDF pages.",
     category: "pdf",
-    status: "phase2",
+    status: "live",
     icon: "🗂️",
     title: "Organize PDF — Delete & Reorder Pages Online (Browser-Based)",
     description:
@@ -344,7 +344,7 @@ export const TOOLS: Tool[] = [
     name: "Add Page Numbers",
     tagline: "Stamp page numbers onto a PDF.",
     category: "pdf",
-    status: "phase2",
+    status: "live",
     icon: "🔢",
     title: "Add Page Numbers to PDF — Online & Private (Browser-Based)",
     description:
