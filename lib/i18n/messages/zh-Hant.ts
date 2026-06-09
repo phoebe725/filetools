@@ -27,6 +27,7 @@ const zhHant: Messages = {
     convert: "轉檔",
   },
   tool: {
+    trust: "100% 在您的瀏覽器中 · 檔案從不上傳 · 無需註冊",
     home: "首頁",
     howItWorks: "運作方式",
     faq: "常見問題",

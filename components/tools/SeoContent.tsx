@@ -37,6 +37,36 @@ export function FaqSection({ faqs, heading }: { faqs: Faq[]; heading: string }) 
   );
 }
 
+/** JSON-LD SoftwareApplication data — tells search engines this is a free web app. */
+export function SoftwareAppJsonLd({
+  name,
+  description,
+  url,
+}: {
+  name: string;
+  description: string;
+  url: string;
+}) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name,
+    description,
+    url,
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Web browser",
+    browserRequirements: "Requires JavaScript. Runs entirely in the browser.",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    isAccessibleForFree: true,
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
 /** JSON-LD FAQ structured data for richer search results. */
 export function FaqJsonLd({ faqs }: { faqs: Faq[] }) {
   if (faqs.length === 0) return null;

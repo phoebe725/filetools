@@ -27,6 +27,7 @@ const zhHans: Messages = {
     convert: "转换",
   },
   tool: {
+    trust: "100% 在您的浏览器中 · 文件从不上传 · 无需注册",
     home: "首页",
     howItWorks: "使用方法",
     faq: "常见问题",

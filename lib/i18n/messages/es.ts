@@ -27,6 +27,7 @@ const es: Messages = {
     convert: "Convertir",
   },
   tool: {
+    trust: "100% en tu navegador · los archivos nunca se suben · sin registro",
     home: "Inicio",
     howItWorks: "Cómo funciona",
     faq: "Preguntas frecuentes",

@@ -27,6 +27,7 @@ const fr: Messages = {
     convert: "Convertir",
   },
   tool: {
+    trust: "100 % dans votre navigateur · fichiers jamais téléversés · sans inscription",
     home: "Accueil",
     howItWorks: "Comment ça marche",
     faq: "Questions fréquentes",

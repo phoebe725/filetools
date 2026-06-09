@@ -27,6 +27,7 @@ const de: Messages = {
     convert: "Konvertieren",
   },
   tool: {
+    trust: "100 % in Ihrem Browser · Dateien werden nie hochgeladen · keine Anmeldung",
     home: "Startseite",
     howItWorks: "So funktioniert es",
     faq: "Häufig gestellte Fragen",

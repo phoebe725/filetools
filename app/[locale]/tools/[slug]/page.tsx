@@ -6,7 +6,13 @@ import { ToolClient } from "@/components/tools/ToolClient";
 import { PrivacyNote } from "@/components/PrivacyNote";
 import { AdSlot } from "@/components/AdSlot";
 import { RelatedTools } from "@/components/tools/RelatedTools";
-import { HowItWorks, FaqSection, FaqJsonLd } from "@/components/tools/SeoContent";
+import { TrustBlock } from "@/components/tools/TrustBlock";
+import {
+  HowItWorks,
+  FaqSection,
+  FaqJsonLd,
+  SoftwareAppJsonLd,
+} from "@/components/tools/SeoContent";
 import { locales, isLocale, defaultLocale, SITE_URL } from "@/lib/i18n/config";
 import { getMessages } from "@/lib/i18n/messages";
 import { getToolContent } from "@/lib/i18n/tool-content";
@@ -53,6 +59,11 @@ export default async function ToolPage({ params }: PageProps) {
   return (
     <article className="container-page py-8 lg:py-12">
       <FaqJsonLd faqs={content.faqs} />
+      <SoftwareAppJsonLd
+        name={content.name}
+        description={content.description}
+        url={`${SITE_URL}/${locale}/tools/${base.slug}`}
+      />
 
       <nav className="mb-4 text-sm text-slate-500">
         <Link href={`/${locale}`} className="hover:text-slate-800">
@@ -69,6 +80,10 @@ export default async function ToolPage({ params }: PageProps) {
         </h1>
         <p className="mt-3 text-lg text-slate-600">{content.intro}</p>
       </header>
+
+      <div className="mb-6 max-w-2xl">
+        <TrustBlock text={t.tool.trust} />
+      </div>
 
       <AdSlot placement="tool-top" />
 

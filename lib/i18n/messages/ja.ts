@@ -27,6 +27,7 @@ const ja: Messages = {
     convert: "変換",
   },
   tool: {
+    trust: "100% ブラウザ内で処理 · ファイルはアップロードされません · 登録不要",
     home: "ホーム",
     howItWorks: "使い方",
     faq: "よくあるご質問",

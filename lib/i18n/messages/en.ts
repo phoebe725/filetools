@@ -29,6 +29,7 @@ const en = {
     convert: "Convert",
   },
   tool: {
+    trust: "100% in your browser · files never uploaded · no sign-up",
     home: "Home",
     howItWorks: "How it works",
     faq: "Frequently asked questions",
