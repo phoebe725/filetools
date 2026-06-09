@@ -50,19 +50,21 @@ export default function HomePage() {
           );
         })}
 
-        {/* Coming soon */}
-        <section id="coming-soon" className="scroll-mt-20">
-          <h2 className="mb-1 text-2xl font-bold text-slate-900">Coming soon</h2>
-          <p className="mb-4 text-sm text-slate-500">
-            In development. We won&apos;t fake results — these will ship when they
-            genuinely work.
-          </p>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {comingSoonTools().map((tool) => (
-              <ToolCard key={tool.slug} tool={tool} />
-            ))}
-          </div>
-        </section>
+        {/* Coming soon (only shown if any tools are still in this state) */}
+        {comingSoonTools().length > 0 && (
+          <section id="coming-soon" className="scroll-mt-20">
+            <h2 className="mb-1 text-2xl font-bold text-slate-900">Coming soon</h2>
+            <p className="mb-4 text-sm text-slate-500">
+              In development. We won&apos;t fake results — these will ship when they
+              genuinely work.
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {comingSoonTools().map((tool) => (
+                <ToolCard key={tool.slug} tool={tool} />
+              ))}
+            </div>
+          </section>
+        )}
       </div>
 
       <p className="mt-12 text-center text-sm text-slate-400">

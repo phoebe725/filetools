@@ -68,49 +68,26 @@ const LIVE_COMPONENTS: Record<string, ComponentType> = {
     ssr: false,
     loading: Loading,
   }),
-};
-
-// Config for phase-2 placeholders and coming-soon tools, all rendered through
-// the shared ComingSoonTool so the upload → action UI stays consistent.
-interface SoonConfig {
-  accept: string[];
-  hint: string;
-  multiple: boolean;
-  actionLabel: string;
-}
-
-const SOON_CONFIG: Record<string, SoonConfig> = {
-  // honest coming-soon
-  "pdf-to-word": {
-    accept: ["application/pdf", ".pdf"],
-    hint: "A single PDF",
-    multiple: false,
-    actionLabel: "Convert to Word",
-  },
-  "word-to-pdf": {
-    accept: [".doc", ".docx", "application/msword"],
-    hint: "A Word document",
-    multiple: false,
-    actionLabel: "Convert to PDF",
-  },
-  "pdf-to-excel": {
-    accept: ["application/pdf", ".pdf"],
-    hint: "A single PDF",
-    multiple: false,
-    actionLabel: "Convert to Excel",
-  },
-  "pdf-to-powerpoint": {
-    accept: ["application/pdf", ".pdf"],
-    hint: "A single PDF",
-    multiple: false,
-    actionLabel: "Convert to PowerPoint",
-  },
-  "edit-pdf-text": {
-    accept: ["application/pdf", ".pdf"],
-    hint: "A single PDF",
-    multiple: false,
-    actionLabel: "Edit text",
-  },
+  "pdf-to-word": dynamic(() => import("./clients/PdfToWord"), {
+    ssr: false,
+    loading: Loading,
+  }),
+  "pdf-to-excel": dynamic(() => import("./clients/PdfToExcel"), {
+    ssr: false,
+    loading: Loading,
+  }),
+  "pdf-to-powerpoint": dynamic(() => import("./clients/PdfToPowerpoint"), {
+    ssr: false,
+    loading: Loading,
+  }),
+  "word-to-pdf": dynamic(() => import("./clients/WordToPdf"), {
+    ssr: false,
+    loading: Loading,
+  }),
+  "edit-pdf-text": dynamic(() => import("./clients/EditPdfText"), {
+    ssr: false,
+    loading: Loading,
+  }),
 };
 
 export function ToolClient({ slug }: { slug: string }) {
@@ -118,19 +95,7 @@ export function ToolClient({ slug }: { slug: string }) {
   const Live = LIVE_COMPONENTS[slug];
   if (Live) return <Live />;
 
-  const config = SOON_CONFIG[slug];
-  if (config) {
-    return (
-      <ComingSoonTool
-        accept={config.accept}
-        hint={config.hint}
-        multiple={config.multiple}
-        actionLabel={config.actionLabel}
-      />
-    );
-  }
-
-  // Unknown slug fallback.
+  // Fallback for any tool without a dedicated widget yet.
   return (
     <ComingSoonTool
       actionLabel={tool ? `Use ${tool.name}` : "Continue"}

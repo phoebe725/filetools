@@ -10,14 +10,19 @@
     "deploy": "bash deploy.sh"
   },
   "dependencies": {
+    "docx": "^9.7.1",
     "heic2any": "^0.0.4",
+    "jspdf": "^4.2.1",
     "jszip": "^3.10.1",
+    "mammoth": "^1.12.0",
     "next": "15.1.6",
     "pdf-lib": "^1.17.1",
     "pdfjs-dist": "^4.10.38",
+    "pptxgenjs": "^4.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tesseract.js": "^7.0.0"
+    "tesseract.js": "^7.0.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/node": "^20.17.12",

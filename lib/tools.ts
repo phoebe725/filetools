@@ -401,25 +401,30 @@ export const TOOLS: Tool[] = [
   {
     slug: "pdf-to-word",
     name: "PDF to Word",
-    tagline: "Convert PDF to an editable Word document.",
+    tagline: "Extract PDF text into an editable Word doc.",
     category: "convert",
-    status: "soon",
+    status: "live",
     icon: "📝",
-    title: "PDF to Word — Convert PDF to DOCX (Coming Soon)",
+    title: "PDF to Word — Convert PDF to Editable DOCX (Free, In-Browser)",
     description:
-      "Convert PDF documents to editable Word (DOCX) files. Coming soon.",
+      "Extract the text from a PDF into an editable Word (.docx) document, in your browser. Best-effort, free and private.",
     h1: "PDF to Word",
     intro:
-      "Turn PDFs into editable Word documents. This conversion is in development.",
+      "Pull the text out of a PDF into an editable Word document. This is a best-effort conversion — the text comes across so you can edit it, but columns, images, and exact layout are not preserved. Runs entirely in your browser.",
     howItWorks: [
       "Upload a PDF.",
-      "Convert to Word (coming soon).",
-      "Download the DOCX file.",
+      "Click Convert — the text is extracted locally.",
+      "A .docx is built in your browser.",
+      "Download and edit it in Word, Google Docs, or Pages.",
     ],
     faqs: [
       {
-        q: "Why isn't this ready yet?",
-        a: "High-fidelity PDF-to-Word conversion is complex to do well in the browser. We'd rather ship it right.",
+        q: "Will it look exactly like my PDF?",
+        a: "No. This extracts the text into an editable document; complex layout, columns, and images aren't reproduced. It's ideal when you mainly need the words back.",
+      },
+      {
+        q: "Are my files uploaded?",
+        a: "No — extraction and the .docx are produced entirely in your browser.",
       },
     ],
     related: ["word-to-pdf", "pdf-to-excel", "pdf-to-powerpoint"],
@@ -427,23 +432,30 @@ export const TOOLS: Tool[] = [
   {
     slug: "word-to-pdf",
     name: "Word to PDF",
-    tagline: "Convert Word documents to PDF.",
+    tagline: "Convert a .docx into a shareable PDF.",
     category: "convert",
-    status: "soon",
+    status: "live",
     icon: "📃",
-    title: "Word to PDF — Convert DOCX to PDF (Coming Soon)",
-    description: "Convert Word (DOCX) documents into PDF files. Coming soon.",
+    title: "Word to PDF — Convert DOCX to PDF Online (Free, In-Browser)",
+    description:
+      "Convert a Word (.docx) document into a shareable PDF in your browser. Best-effort, free and private.",
     h1: "Word to PDF",
-    intro: "Convert Word documents into shareable PDFs. This tool is in development.",
+    intro:
+      "Turn a Word .docx into a PDF you can share. Text and paragraph flow are preserved; heavy styling, images, and tables may be simplified. Everything runs in your browser.",
     howItWorks: [
-      "Upload a Word document.",
-      "Convert to PDF (coming soon).",
-      "Download the PDF.",
+      "Upload a .docx document.",
+      "Click Convert — the document is read locally.",
+      "A PDF is generated in your browser.",
+      "Download your PDF.",
     ],
     faqs: [
       {
-        q: "When is this coming?",
-        a: "We're working on it. Sign up to be notified when it launches.",
+        q: "Which files are supported?",
+        a: "Modern Word .docx files. The older .doc format isn't supported — re-save it as .docx first.",
+      },
+      {
+        q: "Will it match Word's layout exactly?",
+        a: "It's a best-effort conversion focused on text and paragraphs; complex formatting may be simplified.",
       },
     ],
     related: ["pdf-to-word", "merge-pdf", "images-to-pdf"],
@@ -451,24 +463,30 @@ export const TOOLS: Tool[] = [
   {
     slug: "pdf-to-excel",
     name: "PDF to Excel",
-    tagline: "Extract tables from PDF to Excel.",
+    tagline: "Extract PDF text into a spreadsheet.",
     category: "convert",
-    status: "soon",
+    status: "live",
     icon: "📊",
-    title: "PDF to Excel — Convert PDF Tables to XLSX (Coming Soon)",
-    description: "Extract tables from PDFs into Excel spreadsheets. Coming soon.",
+    title: "PDF to Excel — Convert PDF Text to XLSX (Free, In-Browser)",
+    description:
+      "Extract text from a PDF into an editable Excel (.xlsx) spreadsheet in your browser. Best-effort table detection, free and private.",
     h1: "PDF to Excel",
     intro:
-      "Pull tabular data out of PDFs into editable Excel spreadsheets. This conversion is in development.",
+      "Get the text out of a PDF into a spreadsheet. Each line becomes a row, and wide gaps are treated as column breaks. Real-world tables vary, so review the result — but it saves a lot of retyping. Runs in your browser.",
     howItWorks: [
       "Upload a PDF.",
-      "Convert tables to Excel (coming soon).",
-      "Download the XLSX file.",
+      "Click Convert — text is extracted locally.",
+      "An .xlsx is built, splitting columns on wide gaps.",
+      "Download and tidy up the columns in Excel or Google Sheets.",
     ],
     faqs: [
       {
-        q: "Why is this hard?",
-        a: "Reliable table detection in PDFs is a difficult problem. We're building it carefully.",
+        q: "Will it detect my tables perfectly?",
+        a: "Not always. PDFs don't store true table structure, so columns are guessed from spacing. Expect to fix some cells, especially in complex layouts.",
+      },
+      {
+        q: "Is it private?",
+        a: "Yes — extraction and the spreadsheet are produced entirely in your browser.",
       },
     ],
     related: ["pdf-to-word", "pdf-to-powerpoint", "merge-pdf"],
@@ -476,24 +494,30 @@ export const TOOLS: Tool[] = [
   {
     slug: "pdf-to-powerpoint",
     name: "PDF to PowerPoint",
-    tagline: "Convert PDF pages to slides.",
+    tagline: "Turn each PDF page into a slide.",
     category: "convert",
-    status: "soon",
+    status: "live",
     icon: "📽️",
-    title: "PDF to PowerPoint — Convert PDF to PPTX (Coming Soon)",
-    description: "Convert PDF pages into PowerPoint slides. Coming soon.",
+    title: "PDF to PowerPoint — Convert PDF to PPTX (Free, In-Browser)",
+    description:
+      "Convert PDF pages into PowerPoint (.pptx) slides in your browser. Each page becomes a full-slide image. Free and private.",
     h1: "PDF to PowerPoint",
     intro:
-      "Turn PDF pages into editable PowerPoint slides. This conversion is in development.",
+      "Turn a PDF into a PowerPoint deck where each page becomes a slide. Slides look exactly like the PDF (each page is placed as a full-slide image), so they're great for presenting — though the text on them isn't individually editable. Runs in your browser.",
     howItWorks: [
       "Upload a PDF.",
-      "Convert to slides (coming soon).",
-      "Download the PPTX file.",
+      "Click Convert — each page is rendered locally.",
+      "A .pptx is built with one slide per page.",
+      "Download and open it in PowerPoint, Keynote, or Google Slides.",
     ],
     faqs: [
       {
-        q: "When will it be ready?",
-        a: "Soon. Leave your email to be notified at launch.",
+        q: "Can I edit the text on the slides?",
+        a: "Not directly — each slide is a high-resolution image of the page. This keeps the look identical to the PDF.",
+      },
+      {
+        q: "Is it private?",
+        a: "Yes — pages are rendered and the .pptx is built entirely in your browser.",
       },
     ],
     related: ["pdf-to-word", "pdf-to-excel", "pdf-to-images"],
@@ -536,24 +560,30 @@ export const TOOLS: Tool[] = [
   {
     slug: "edit-pdf-text",
     name: "Edit PDF Text",
-    tagline: "Edit existing text inside a PDF.",
+    tagline: "Extract, edit, and rebuild PDF text.",
     category: "pdf",
-    status: "soon",
+    status: "live",
     icon: "✏️",
-    title: "Edit PDF Text — Modify PDF Content Online (Coming Soon)",
-    description: "Edit existing text directly inside PDF files. Coming soon.",
+    title: "Edit PDF Text — Extract, Edit & Rebuild (Free, In-Browser)",
+    description:
+      "Extract the text from a PDF, edit it page by page, and rebuild a clean text PDF — all in your browser. Free and private.",
     h1: "Edit PDF Text",
     intro:
-      "Change wording and fix typos directly in a PDF. This advanced editor is in development.",
+      "Fix typos and change wording in a PDF. This extracts the text so you can edit it page by page, then rebuilds a clean, text-only PDF. The original fonts, images, and exact layout aren't preserved — it's best when you mainly need to change the words. Runs in your browser.",
     howItWorks: [
       "Upload a PDF.",
-      "Edit the text (coming soon).",
-      "Download the updated PDF.",
+      "Edit the extracted text in the box for each page.",
+      "Click Rebuild — a new text PDF is generated locally.",
+      "Download your edited PDF.",
     ],
     faqs: [
       {
-        q: "Why is editing PDF text hard?",
-        a: "PDFs store text as positioned glyphs, not flowing paragraphs, so editing in place is complex. We're working on it.",
+        q: "Does it keep the original design?",
+        a: "No. PDFs store text as positioned glyphs, not editable paragraphs, so true in-place editing isn't possible for free in the browser. This rebuilds a clean text PDF from your edits instead.",
+      },
+      {
+        q: "Are my files uploaded?",
+        a: "No — extraction and the rebuilt PDF happen entirely on your device.",
       },
     ],
     related: ["organize-pdf", "add-page-numbers", "rotate-pdf"],
