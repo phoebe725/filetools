@@ -15,6 +15,7 @@ const en = {
     privacy: "Privacy",
     terms: "Terms",
     contact: "Contact",
+    support: "Support us",
   },
   home: {
     title: "Free, private file tools",

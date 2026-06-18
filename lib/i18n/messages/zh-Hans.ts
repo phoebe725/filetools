@@ -14,6 +14,7 @@ const zhHans: DeepPartial<Messages> = {
     privacy: "隐私",
     terms: "条款",
     contact: "联系我们",
+    support: "支持我们",
   },
   home: {
     title: "免费、私密的文件工具",

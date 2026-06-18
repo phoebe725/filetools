@@ -10,7 +10,7 @@ import { isLocale, defaultLocale } from "@/lib/i18n/config";
 import { getMessages } from "@/lib/i18n/messages";
 import { getToolContent } from "@/lib/i18n/tool-content";
 
-const CATEGORY_ORDER: ToolCategory[] = ["convert", "pdf", "image"];
+const CATEGORY_ORDER: ToolCategory[] = ["pdf", "convert", "image"];
 
 export default async function HomePage({
   params,

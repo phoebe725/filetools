@@ -14,6 +14,7 @@ const zhHant: DeepPartial<Messages> = {
     privacy: "隱私權",
     terms: "服務條款",
     contact: "聯絡我們",
+    support: "支持我們",
   },
   home: {
     title: "免費、私密的檔案工具",

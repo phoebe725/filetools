@@ -14,6 +14,7 @@ const ja: DeepPartial<Messages> = {
     privacy: "プライバシー",
     terms: "利用規約",
     contact: "お問い合わせ",
+    support: "応援する",
   },
   home: {
     title: "無料でプライベートなファイルツール",

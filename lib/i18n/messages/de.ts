@@ -14,6 +14,7 @@ const de: DeepPartial<Messages> = {
     privacy: "Datenschutz",
     terms: "AGB",
     contact: "Kontakt",
+    support: "Unterstützen",
   },
   home: {
     title: "Kostenlose, private Datei-Tools",

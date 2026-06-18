@@ -14,6 +14,7 @@ const pt: DeepPartial<Messages> = {
     privacy: "Privacidade",
     terms: "Termos",
     contact: "Contato",
+    support: "Apoie-nos",
   },
   home: {
     title: "Ferramentas de arquivo gratuitas e privadas",
