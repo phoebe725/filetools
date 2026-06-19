@@ -54,6 +54,10 @@ const fr: ToolTranslations = {
         q: "Puis-je conserver les proportions ?",
         a: "Oui. Activez « Conserver les proportions » et l'autre dimension est calculée automatiquement au fur et à mesure de votre saisie.",
       },
+      {
+        q: "Which image formats can I resize?",
+        a: "PNG, JPG et WebP. Le résultat conserve votre format d'origine, sauf si vous le convertissez séparément.",
+      },
     ],
   },
   "compress-image": {
@@ -79,6 +83,10 @@ const fr: ToolTranslations = {
       {
         q: "Y a-t-il une limite de taille de fichier ?",
         a: "Il n'y a aucune limite serveur stricte puisque rien n'est téléversé, mais les images très volumineuses peuvent être lentes sur les appareils à faible mémoire.",
+      },
+      {
+        q: "Does compressing change the image dimensions?",
+        a: "Non. La compression réduit la taille du fichier en ajustant la qualité et l'encodage ; la largeur et la hauteur restent identiques. Utilisez Redimensionner une image si vous souhaitez aussi des dimensions plus petites.",
       },
     ],
   },
@@ -106,6 +114,10 @@ const fr: ToolTranslations = {
         q: "Quelle taille de page est utilisée ?",
         a: "Chaque page est dimensionnée à celle de son image, il n'y a donc ni marges disgracieuses ni recadrage.",
       },
+      {
+        q: "Are my images uploaded to create the PDF?",
+        a: "Non. Le PDF est assemblé localement dans votre navigateur avec pdf-lib, vos images ne quittent donc jamais votre appareil.",
+      },
     ],
   },
   "heic-to-jpg": {
@@ -127,6 +139,14 @@ const fr: ToolTranslations = {
       {
         q: "Pourquoi la conversion HEIC peut-elle échouer ?",
         a: "Le HEIC n'est pas décodable nativement dans tous les navigateurs. Nous utilisons une bibliothèque au mieux, mais certains fichiers peuvent ne pas se convertir.",
+      },
+      {
+        q: "Will I lose quality converting HEIC to JPG?",
+        a: "Il y a un léger changement car le JPG est avec perte, mais c'est visuellement négligeable pour les photos du quotidien et vous obtenez un fichier universellement compatible.",
+      },
+      {
+        q: "Are my photos uploaded?",
+        a: "Non. La conversion est tentée entièrement dans votre navigateur, vos photos ne quittent donc jamais votre appareil.",
       },
     ],
   },
@@ -154,6 +174,10 @@ const fr: ToolTranslations = {
         q: "Mes PDF sont-ils téléversés ?",
         a: "Non. La fusion est réalisée localement avec pdf-lib. Vos documents ne quittent jamais votre appareil.",
       },
+      {
+        q: "Will merging change the quality of my PDFs?",
+        a: "Non. Les pages sont copiées telles quelles dans le nouveau document, le texte, les images et la résolution sont donc préservés à l'identique.",
+      },
     ],
   },
   "split-pdf": {
@@ -175,6 +199,14 @@ const fr: ToolTranslations = {
       {
         q: "Quel format de plage dois-je utiliser ?",
         a: "Utilisez des virgules et des tirets, comme 1-3, 5, 8-10. Les pages sont exportées dans l'ordre où vous les indiquez.",
+      },
+      {
+        q: "Can I extract a single page?",
+        a: "Oui. Saisissez simplement ce numéro de page (par exemple, 4) pour exporter un PDF d'une seule page.",
+      },
+      {
+        q: "Are my PDFs uploaded to split them?",
+        a: "Non. La division a lieu localement dans votre navigateur avec pdf-lib ; votre fichier ne quitte jamais votre appareil.",
       },
     ],
   },
@@ -198,6 +230,14 @@ const fr: ToolTranslations = {
         q: "Puis-je faire pivoter seulement certaines pages ?",
         a: "Oui. Saisissez des numéros de page ou des plages précis, ou laissez le champ vide pour faire pivoter toutes les pages.",
       },
+      {
+        q: "Does rotating reduce quality?",
+        a: "Non. La rotation ne change que l'orientation de chaque page, le contenu reste donc identique pixel pour pixel.",
+      },
+      {
+        q: "Are my files uploaded?",
+        a: "Non. La rotation est réalisée localement dans votre navigateur ; votre PDF ne quitte jamais votre appareil.",
+      },
     ],
   },
   "pdf-to-images": {
@@ -219,6 +259,14 @@ const fr: ToolTranslations = {
       {
         q: "Mes fichiers sont-ils téléversés ?",
         a: "Non. Le rendu utilise pdf.js localement dans votre navigateur.",
+      },
+      {
+        q: "What resolution are the exported images?",
+        a: "Les pages sont affichées en haute résolution, adaptée au partage et aux aperçus. Les pages plus grandes produisent des fichiers PNG plus volumineux.",
+      },
+      {
+        q: "Can I get JPGs instead of PNGs?",
+        a: "Cet outil exporte en PNG pour une qualité optimale. Pour obtenir des JPG, passez ensuite les PNG dans notre Convertisseur d'images.",
       },
     ],
   },
@@ -242,6 +290,14 @@ const fr: ToolTranslations = {
         q: "Le fichier d'origine est-il modifié ?",
         a: "Non. Un nouveau PDF est généré ; votre fichier d'origine reste intact.",
       },
+      {
+        q: "Are my files uploaded?",
+        a: "Non. La réorganisation et la suppression des pages ont lieu localement dans votre navigateur ; votre PDF ne quitte jamais votre appareil.",
+      },
+      {
+        q: "What if I delete the wrong page?",
+        a: "Votre fichier d'origine n'est jamais modifié, il vous suffit donc de recommencer avec lui si vous supprimez une page par erreur.",
+      },
     ],
   },
   "add-page-numbers": {
@@ -263,6 +319,14 @@ const fr: ToolTranslations = {
       {
         q: "Puis-je choisir où apparaissent les numéros ?",
         a: "Oui — vous pourrez choisir un coin ou le centre du pied de page.",
+      },
+      {
+        q: "Can I start numbering from a specific number?",
+        a: "Oui. Définissez le numéro de départ — pratique lorsque votre document fait suite à un autre fichier.",
+      },
+      {
+        q: "Are my files uploaded?",
+        a: "Non. Les numéros de page sont apposés localement dans votre navigateur ; votre PDF ne quitte jamais votre appareil.",
       },
     ],
   },
@@ -290,6 +354,10 @@ const fr: ToolTranslations = {
         q: "Pourquoi mon PDF n'a-t-il pas rétréci ?",
         a: "Les PDF uniquement textuels sont déjà compacts. Cet outil offre les gains les plus importants sur les numérisations et les PDF riches en photos.",
       },
+      {
+        q: "Are my files uploaded to compress them?",
+        a: "Non. La compression s'exécute entièrement dans votre navigateur en réaffichant les pages localement ; votre PDF ne quitte jamais votre appareil.",
+      },
     ],
   },
   "pdf-to-word": {
@@ -315,6 +383,10 @@ const fr: ToolTranslations = {
       {
         q: "Mes fichiers sont-ils téléversés ?",
         a: "Non — l'extraction et le fichier .docx sont produits entièrement dans votre navigateur.",
+      },
+      {
+        q: "Can I edit the result?",
+        a: "Oui. Vous obtenez un fichier .docx standard que vous pouvez ouvrir et modifier dans Word, Google Docs ou Pages.",
       },
     ],
   },
@@ -342,6 +414,10 @@ const fr: ToolTranslations = {
         q: "Correspondra-t-il exactement à la mise en page de Word ?",
         a: "Il s'agit d'une conversion au mieux axée sur le texte et les paragraphes ; la mise en forme complexe peut être simplifiée.",
       },
+      {
+        q: "Are my documents uploaded?",
+        a: "Non. Le fichier .docx est lu et le PDF est généré entièrement dans votre navigateur ; votre fichier ne quitte jamais votre appareil.",
+      },
     ],
   },
   "pdf-to-excel": {
@@ -368,6 +444,10 @@ const fr: ToolTranslations = {
         q: "Est-ce privé ?",
         a: "Oui — l'extraction et la feuille de calcul sont produites entièrement dans votre navigateur.",
       },
+      {
+        q: "Which spreadsheet format do I get?",
+        a: "Un fichier .xlsx standard que vous pouvez ouvrir dans Excel, Google Sheets ou Numbers.",
+      },
     ],
   },
   "pdf-to-powerpoint": {
@@ -393,6 +473,10 @@ const fr: ToolTranslations = {
       {
         q: "Est-ce privé ?",
         a: "Oui — les pages sont affichées et le fichier .pptx est créé entièrement dans votre navigateur.",
+      },
+      {
+        q: "Which file format do I get?",
+        a: "Un fichier .pptx standard que vous pouvez ouvrir dans PowerPoint, Keynote ou Google Slides.",
       },
     ],
   },
@@ -449,6 +533,10 @@ const fr: ToolTranslations = {
       {
         q: "Mes fichiers sont-ils téléversés ?",
         a: "Non — l'extraction et la reconstruction du PDF ont lieu entièrement sur votre appareil.",
+      },
+      {
+        q: "Which PDFs work best?",
+        a: "Les PDF basés sur du texte, lorsque vous avez surtout besoin de corriger la formulation. Les PDF numérisés ou uniquement composés d'images n'ont aucun texte extractible — lancez d'abord l'OCR.",
       },
     ],
   },

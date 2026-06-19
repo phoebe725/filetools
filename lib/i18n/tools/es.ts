@@ -55,6 +55,10 @@ const es: ToolTranslations = {
         q: "¿Puedo mantener la relación de aspecto?",
         a: "Sí. Activa 'Mantener relación de aspecto' y la otra dimensión se calcula automáticamente mientras escribes.",
       },
+      {
+        q: "¿Qué formatos de imagen puedo redimensionar?",
+        a: "PNG, JPG y WebP. El resultado mantiene tu formato original a menos que lo conviertas por separado.",
+      },
     ],
   },
   "compress-image": {
@@ -80,6 +84,10 @@ const es: ToolTranslations = {
       {
         q: "¿Hay un límite de tamaño de archivo?",
         a: "No hay un límite estricto del servidor porque no se sube nada, pero las imágenes muy grandes pueden ir lentas en dispositivos con poca memoria.",
+      },
+      {
+        q: "¿Comprimir cambia las dimensiones de la imagen?",
+        a: "No. La compresión reduce el tamaño de archivo ajustando la calidad y la codificación; el ancho y el alto se mantienen iguales. Usa Redimensionar imagen si además quieres dimensiones más pequeñas.",
       },
     ],
   },
@@ -107,6 +115,10 @@ const es: ToolTranslations = {
         q: "¿Qué tamaño de página se usa?",
         a: "Cada página se ajusta a su imagen, así que no hay márgenes raros ni recortes.",
       },
+      {
+        q: "¿Se suben mis imágenes para crear el PDF?",
+        a: "No. El PDF se ensambla localmente en tu navegador con pdf-lib, así que tus imágenes nunca salen de tu dispositivo.",
+      },
     ],
   },
   "heic-to-jpg": {
@@ -128,6 +140,14 @@ const es: ToolTranslations = {
       {
         q: "¿Por qué podría fallar la conversión de HEIC?",
         a: "HEIC no se puede decodificar de forma nativa en todos los navegadores. Usamos una biblioteca con el mejor esfuerzo posible, pero algunos archivos podrían no convertirse.",
+      },
+      {
+        q: "¿Perderé calidad al convertir de HEIC a JPG?",
+        a: "Hay un pequeño cambio porque JPG tiene pérdida, pero es visualmente insignificante en fotos del día a día y te da un archivo compatible con todo.",
+      },
+      {
+        q: "¿Se suben mis fotos?",
+        a: "No. La conversión se intenta por completo en tu navegador, así que tus fotos nunca salen de tu dispositivo.",
       },
     ],
   },
@@ -155,6 +175,10 @@ const es: ToolTranslations = {
         q: "¿Se suben mis PDF?",
         a: "No. La combinación se hace localmente con pdf-lib. Tus documentos nunca salen de tu dispositivo.",
       },
+      {
+        q: "¿Combinar cambiará la calidad de mis PDF?",
+        a: "No. Las páginas se copian tal cual al nuevo documento, así que el texto, las imágenes y la resolución se conservan exactamente.",
+      },
     ],
   },
   "split-pdf": {
@@ -176,6 +200,14 @@ const es: ToolTranslations = {
       {
         q: "¿Qué formato de rango debo usar?",
         a: "Usa comas y guiones, como 1-3, 5, 8-10. Las páginas se exportan en el orden en que las indiques.",
+      },
+      {
+        q: "¿Puedo extraer una sola página?",
+        a: "Sí. Introduce solo ese número de página (por ejemplo, 4) para exportar un PDF de una sola página.",
+      },
+      {
+        q: "¿Se suben mis PDF para dividirlos?",
+        a: "No. La división ocurre localmente en tu navegador con pdf-lib; tu archivo nunca sale de tu dispositivo.",
       },
     ],
   },
@@ -199,6 +231,14 @@ const es: ToolTranslations = {
         q: "¿Puedo rotar solo algunas páginas?",
         a: "Sí. Introduce números de página o rangos concretos, o déjalo en blanco para rotar todas las páginas.",
       },
+      {
+        q: "¿Rotar reduce la calidad?",
+        a: "No. La rotación solo cambia la orientación de cada página, así que el contenido se mantiene idéntico píxel a píxel.",
+      },
+      {
+        q: "¿Se suben mis archivos?",
+        a: "No. La rotación se hace localmente en tu navegador; tu PDF nunca sale de tu dispositivo.",
+      },
     ],
   },
   "pdf-to-images": {
@@ -220,6 +260,14 @@ const es: ToolTranslations = {
       {
         q: "¿Se suben mis archivos?",
         a: "No. El renderizado usa pdf.js localmente en tu navegador.",
+      },
+      {
+        q: "¿Qué resolución tienen las imágenes exportadas?",
+        a: "Las páginas se renderizan a una resolución alta, adecuada para compartir y para vistas previas. Las páginas más grandes producen archivos PNG más grandes.",
+      },
+      {
+        q: "¿Puedo obtener JPG en lugar de PNG?",
+        a: "Esta herramienta exporta PNG para la mejor calidad. Para obtener JPG, pasa después los PNG por nuestro Conversor de imágenes.",
       },
     ],
   },
@@ -243,6 +291,14 @@ const es: ToolTranslations = {
         q: "¿Se modifica el archivo original?",
         a: "No. Se genera un nuevo PDF; tu archivo original queda intacto.",
       },
+      {
+        q: "¿Se suben mis archivos?",
+        a: "No. Reordenar y eliminar páginas ocurre localmente en tu navegador; tu PDF nunca sale de tu dispositivo.",
+      },
+      {
+        q: "¿Y si elimino la página equivocada?",
+        a: "Tu archivo original nunca se modifica, así que basta con empezar de nuevo con él si eliminas una página por error.",
+      },
     ],
   },
   "add-page-numbers": {
@@ -264,6 +320,14 @@ const es: ToolTranslations = {
       {
         q: "¿Puedo elegir dónde aparecen los números?",
         a: "Sí: podrás elegir una esquina o el centro del pie de página.",
+      },
+      {
+        q: "¿Puedo empezar la numeración desde un número concreto?",
+        a: "Sí. Establece el número inicial: práctico cuando tu documento continúa a partir de otro archivo.",
+      },
+      {
+        q: "¿Se suben mis archivos?",
+        a: "No. Los números de página se estampan localmente en tu navegador; tu PDF nunca sale de tu dispositivo.",
       },
     ],
   },
@@ -291,6 +355,10 @@ const es: ToolTranslations = {
         q: "¿Por qué mi PDF no se hizo más pequeño?",
         a: "Los PDF solo de texto ya son compactos. Esta herramienta ofrece el mayor ahorro en escaneos y PDF con muchas fotos.",
       },
+      {
+        q: "¿Se suben mis archivos para comprimirlos?",
+        a: "No. La compresión se ejecuta por completo en tu navegador, volviendo a renderizar las páginas localmente; tu PDF nunca sale de tu dispositivo.",
+      },
     ],
   },
   "pdf-to-word": {
@@ -316,6 +384,10 @@ const es: ToolTranslations = {
       {
         q: "¿Se suben mis archivos?",
         a: "No: la extracción y el .docx se producen por completo en tu navegador.",
+      },
+      {
+        q: "¿Puedo editar el resultado?",
+        a: "Sí. Obtienes un .docx estándar que puedes abrir y editar en Word, Google Docs o Pages.",
       },
     ],
   },
@@ -343,6 +415,10 @@ const es: ToolTranslations = {
         q: "¿Coincidirá exactamente con el diseño de Word?",
         a: "Es una conversión con el mejor esfuerzo posible centrada en el texto y los párrafos; el formato complejo puede simplificarse.",
       },
+      {
+        q: "¿Se suben mis documentos?",
+        a: "No. El .docx se lee y el PDF se genera por completo en tu navegador; tu archivo nunca sale de tu dispositivo.",
+      },
     ],
   },
   "pdf-to-excel": {
@@ -369,6 +445,10 @@ const es: ToolTranslations = {
         q: "¿Es privado?",
         a: "Sí: la extracción y la hoja de cálculo se producen por completo en tu navegador.",
       },
+      {
+        q: "¿Qué formato de hoja de cálculo obtengo?",
+        a: "Un archivo .xlsx estándar que puedes abrir en Excel, Google Sheets o Numbers.",
+      },
     ],
   },
   "pdf-to-powerpoint": {
@@ -394,6 +474,10 @@ const es: ToolTranslations = {
       {
         q: "¿Es privado?",
         a: "Sí: las páginas se renderizan y el .pptx se crea por completo en tu navegador.",
+      },
+      {
+        q: "¿Qué formato de archivo obtengo?",
+        a: "Un .pptx estándar que puedes abrir en PowerPoint, Keynote o Google Slides.",
       },
     ],
   },
@@ -450,6 +534,10 @@ const es: ToolTranslations = {
       {
         q: "¿Se suben mis archivos?",
         a: "No: la extracción y el PDF reconstruido ocurren por completo en tu dispositivo.",
+      },
+      {
+        q: "¿Qué PDF funcionan mejor?",
+        a: "Los PDF basados en texto en los que sobre todo necesitas corregir la redacción. Los PDF escaneados o solo de imagen no tienen texto extraíble: ejecuta primero OCR.",
       },
     ],
   },

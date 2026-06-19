@@ -106,6 +106,10 @@ export const TOOLS: Tool[] = [
         q: "Can I keep the aspect ratio?",
         a: "Yes. Enable 'Keep aspect ratio' and the other dimension is calculated automatically as you type.",
       },
+      {
+        q: "Which image formats can I resize?",
+        a: "PNG, JPG, and WebP. The result keeps your original format unless you convert it separately.",
+      },
     ],
     related: ["compress-image", "image-converter", "images-to-pdf"],
   },
@@ -136,6 +140,10 @@ export const TOOLS: Tool[] = [
       {
         q: "Is there a file size limit?",
         a: "There's no hard server limit because nothing is uploaded, but very large images may be slow on low-memory devices.",
+      },
+      {
+        q: "Does compressing change the image dimensions?",
+        a: "No. Compression lowers file size by adjusting quality and encoding; the width and height stay the same. Use Resize Image if you also want smaller dimensions.",
       },
     ],
     related: ["resize-image", "image-converter", "images-to-pdf"],
@@ -169,6 +177,10 @@ export const TOOLS: Tool[] = [
         q: "What page size is used?",
         a: "Each page is sized to its image, so there are no awkward margins or cropping.",
       },
+      {
+        q: "Are my images uploaded to create the PDF?",
+        a: "No. The PDF is assembled locally in your browser with pdf-lib, so your images never leave your device.",
+      },
     ],
     related: ["merge-pdf", "image-converter", "compress-image"],
   },
@@ -195,6 +207,14 @@ export const TOOLS: Tool[] = [
       {
         q: "Why might HEIC conversion fail?",
         a: "HEIC is not natively decodable in every browser. We use a best-effort library, but some files may not convert.",
+      },
+      {
+        q: "Will I lose quality converting HEIC to JPG?",
+        a: "There's a small change because JPG is lossy, but it's visually negligible for everyday photos and gives you a universally compatible file.",
+      },
+      {
+        q: "Are my photos uploaded?",
+        a: "No. Conversion is attempted entirely in your browser, so your photos never leave your device.",
       },
     ],
     related: ["image-converter", "compress-image", "resize-image"],
@@ -228,6 +248,10 @@ export const TOOLS: Tool[] = [
         q: "Are my PDFs uploaded?",
         a: "No. Merging is done locally with pdf-lib. Your documents never leave your device.",
       },
+      {
+        q: "Will merging change the quality of my PDFs?",
+        a: "No. Pages are copied as-is into the new document, so text, images, and resolution are preserved exactly.",
+      },
     ],
     related: ["split-pdf", "rotate-pdf", "images-to-pdf"],
   },
@@ -254,6 +278,14 @@ export const TOOLS: Tool[] = [
       {
         q: "What range format should I use?",
         a: "Use commas and dashes, like 1-3, 5, 8-10. Pages are exported in the order you list them.",
+      },
+      {
+        q: "Can I extract a single page?",
+        a: "Yes. Enter just that page number (for example, 4) to export a one-page PDF.",
+      },
+      {
+        q: "Are my PDFs uploaded to split them?",
+        a: "No. Splitting happens locally in your browser with pdf-lib; your file never leaves your device.",
       },
     ],
     related: ["merge-pdf", "rotate-pdf", "pdf-to-images"],
@@ -282,6 +314,14 @@ export const TOOLS: Tool[] = [
         q: "Can I rotate only some pages?",
         a: "Yes. Enter specific page numbers or ranges, or leave it blank to rotate every page.",
       },
+      {
+        q: "Does rotating reduce quality?",
+        a: "No. Rotation only changes each page's orientation, so the content stays pixel-for-pixel identical.",
+      },
+      {
+        q: "Are my files uploaded?",
+        a: "No. Rotation is done locally in your browser; your PDF never leaves your device.",
+      },
     ],
     related: ["merge-pdf", "split-pdf", "pdf-to-images"],
   },
@@ -308,6 +348,14 @@ export const TOOLS: Tool[] = [
       {
         q: "Are my files uploaded?",
         a: "No. Rendering uses pdf.js locally in your browser.",
+      },
+      {
+        q: "What resolution are the exported images?",
+        a: "Pages are rendered at a high resolution suitable for sharing and previews. Larger pages produce larger PNG files.",
+      },
+      {
+        q: "Can I get JPGs instead of PNGs?",
+        a: "This tool exports PNG for the best quality. To get JPGs, run the PNGs through our Image Converter afterwards.",
       },
     ],
     related: ["split-pdf", "rotate-pdf", "merge-pdf"],
@@ -336,6 +384,14 @@ export const TOOLS: Tool[] = [
         q: "Is the original file changed?",
         a: "No. A new PDF is generated; your original file is untouched.",
       },
+      {
+        q: "Are my files uploaded?",
+        a: "No. Reordering and deleting pages happens locally in your browser; your PDF never leaves your device.",
+      },
+      {
+        q: "What if I delete the wrong page?",
+        a: "Your original file is never changed, so just start over with it if you remove a page by mistake.",
+      },
     ],
     related: ["split-pdf", "merge-pdf", "rotate-pdf"],
   },
@@ -362,6 +418,14 @@ export const TOOLS: Tool[] = [
       {
         q: "Can I choose where numbers appear?",
         a: "Yes — you'll be able to pick a corner or the center of the footer.",
+      },
+      {
+        q: "Can I start numbering from a specific number?",
+        a: "Yes. Set the starting number — handy when your document continues from another file.",
+      },
+      {
+        q: "Are my files uploaded?",
+        a: "No. Page numbers are stamped locally in your browser; your PDF never leaves your device.",
       },
     ],
     related: ["merge-pdf", "split-pdf", "organize-pdf"],
@@ -395,6 +459,10 @@ export const TOOLS: Tool[] = [
         q: "Why didn't my PDF get smaller?",
         a: "Text-only PDFs are already compact. This tool gives the biggest savings on scans and photo-heavy PDFs.",
       },
+      {
+        q: "Are my files uploaded to compress them?",
+        a: "No. Compression runs entirely in your browser by re-rendering pages locally; your PDF never leaves your device.",
+      },
     ],
     related: ["merge-pdf", "split-pdf", "images-to-pdf"],
   },
@@ -425,6 +493,10 @@ export const TOOLS: Tool[] = [
       {
         q: "Are my files uploaded?",
         a: "No — extraction and the .docx are produced entirely in your browser.",
+      },
+      {
+        q: "Can I edit the result?",
+        a: "Yes. You get a standard .docx you can open and edit in Word, Google Docs, or Pages.",
       },
     ],
     related: ["word-to-pdf", "pdf-to-excel", "pdf-to-powerpoint"],
@@ -457,6 +529,10 @@ export const TOOLS: Tool[] = [
         q: "Will it match Word's layout exactly?",
         a: "It's a best-effort conversion focused on text and paragraphs; complex formatting may be simplified.",
       },
+      {
+        q: "Are my documents uploaded?",
+        a: "No. The .docx is read and the PDF is generated entirely in your browser; your file never leaves your device.",
+      },
     ],
     related: ["pdf-to-word", "merge-pdf", "images-to-pdf"],
   },
@@ -488,6 +564,10 @@ export const TOOLS: Tool[] = [
         q: "Is it private?",
         a: "Yes — extraction and the spreadsheet are produced entirely in your browser.",
       },
+      {
+        q: "Which spreadsheet format do I get?",
+        a: "A standard .xlsx file you can open in Excel, Google Sheets, or Numbers.",
+      },
     ],
     related: ["pdf-to-word", "pdf-to-powerpoint", "merge-pdf"],
   },
@@ -518,6 +598,10 @@ export const TOOLS: Tool[] = [
       {
         q: "Is it private?",
         a: "Yes — pages are rendered and the .pptx is built entirely in your browser.",
+      },
+      {
+        q: "Which file format do I get?",
+        a: "A standard .pptx you can open in PowerPoint, Keynote, or Google Slides.",
       },
     ],
     related: ["pdf-to-word", "pdf-to-excel", "pdf-to-images"],
@@ -584,6 +668,10 @@ export const TOOLS: Tool[] = [
       {
         q: "Are my files uploaded?",
         a: "No — extraction and the rebuilt PDF happen entirely on your device.",
+      },
+      {
+        q: "Which PDFs work best?",
+        a: "Text-based PDFs where you mainly need to fix wording. Scanned or image-only PDFs have no extractable text — run OCR first.",
       },
     ],
     related: ["organize-pdf", "add-page-numbers", "rotate-pdf"],
