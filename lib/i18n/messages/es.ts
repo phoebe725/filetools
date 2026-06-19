@@ -14,6 +14,7 @@ const es: DeepPartial<Messages> = {
     privacy: "Privacidad",
     terms: "Términos",
     contact: "Contacto",
+    about: "Acerca de",
     support: "Apóyanos",
   },
   home: {
@@ -100,8 +101,24 @@ const es: DeepPartial<Messages> = {
           body: "Todas las herramientas de FileTools se ejecutan por completo como JavaScript del lado del cliente. Cuando seleccionas un archivo, se carga en la memoria de tu navegador, se procesa en tu propio dispositivo y se te ofrece de vuelta como descarga. Ningún dato de los archivos se transmite nunca a un servidor.",
         },
         {
-          heading: "Analítica y cookies",
-          body: "Podemos usar analíticas agregadas y respetuosas con la privacidad para entender qué herramientas son populares. No vendemos datos personales. Si en el futuro se añade publicidad, esta política se actualizará para describirla con claridad.",
+          heading: "Cookies",
+          body: "Usamos cookies para dos cosas: recordar tus preferencias (como el idioma que elijas) y —solo después de que aceptes nuestro aviso de cookies— analíticas y publicidad. Puedes rechazar las cookies no esenciales y todas las herramientas seguirán funcionando por completo.",
+        },
+        {
+          heading: "Publicidad",
+          body: "Mostramos anuncios de Google AdSense para mantener FileTools gratis. Google y sus socios pueden usar cookies para mostrar anuncios basados en tus visitas previas a este y otros sitios web. Los anuncios solo se cargan después de que aceptes las cookies. Puedes controlar la publicidad personalizada en la Configuración de anuncios de Google (adssettings.google.com).",
+        },
+        {
+          heading: "Enlaces de afiliados",
+          body: "Algunas páginas contienen enlaces de afiliados a productos de terceros, como software de escritorio. Si haces clic en uno y realizas una compra, podemos ganar una comisión sin coste adicional para ti. Estos enlaces se indican en la página y nunca afectan a nuestras herramientas gratuitas en el navegador.",
+        },
+        {
+          heading: "Analítica",
+          body: "Podemos usar analíticas agregadas y respetuosas con la privacidad para entender qué herramientas son populares. Esto nunca incluye el contenido de tus archivos, que nunca se nos envía. No vendemos tus datos personales.",
+        },
+        {
+          heading: "Tus opciones",
+          body: "Puedes aceptar o rechazar las cookies no esenciales en cualquier momento a través del aviso de cookies, y usar la configuración de tu navegador o la Configuración de anuncios de Google para limitar la personalización de los anuncios.",
         },
         {
           heading: "Contacto",
@@ -148,6 +165,29 @@ const es: DeepPartial<Messages> = {
       filesHeading: "Una nota sobre los archivos",
       filesBody:
         "Por favor, no nos envíes tus archivos por correo. Todas las herramientas se ejecutan por completo en tu navegador, así que no podemos acceder a ellos ni los necesitamos para ayudarte.",
+    },
+    about: {
+      title: "Acerca de FileTools",
+      intro:
+        "FileTools es una colección gratuita de herramientas con la privacidad por delante para trabajar con PDF e imágenes, todas ejecutándose por completo en tu navegador.",
+      sections: [
+        {
+          heading: "Nuestra misión",
+          body: "Queremos que las tareas cotidianas con archivos —combinar PDF, convertir imágenes, comprimir archivos— sean rápidas, gratuitas y privadas, sin obligarte a subir documentos sensibles al servidor de otra persona.",
+        },
+        {
+          heading: "En qué se diferencia",
+          body: "Todas las herramientas se ejecutan como código del lado del cliente en tu propio dispositivo. Tus archivos nunca salen de tu navegador, no hay registro y no se almacena nada. Lo que haces aquí se queda en tu ordenador.",
+        },
+        {
+          heading: "Cómo lo mantenemos gratis",
+          body: "FileTools se financia con anuncios discretos y enlaces de afiliados ocasionales a herramientas que de verdad nos resultan útiles. Eso nos permite mantener todas las herramientas gratis para todos. Consulta nuestra Política de privacidad para más detalles.",
+        },
+        {
+          heading: "Ponte en contacto",
+          body: "¿Tienes un error, una idea o una herramienta que te gustaría que existiera? Visita nuestra página de Contacto; nos encantaría saber de ti.",
+        },
+      ],
     },
   },
 };

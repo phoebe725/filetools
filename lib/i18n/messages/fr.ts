@@ -14,6 +14,7 @@ const fr: DeepPartial<Messages> = {
     privacy: "Confidentialité",
     terms: "Conditions",
     contact: "Contact",
+    about: "À propos",
     support: "Nous soutenir",
   },
   home: {
@@ -100,8 +101,24 @@ const fr: DeepPartial<Messages> = {
           body: "Chaque outil de FileTools s'exécute entièrement en JavaScript côté client. Lorsque vous sélectionnez un fichier, il est chargé dans la mémoire de votre navigateur, traité sur votre propre appareil, puis vous est proposé en téléchargement. Aucune donnée de fichier n'est jamais transmise à un serveur.",
         },
         {
-          heading: "Analyse d'audience et cookies",
-          body: "Nous pouvons utiliser des statistiques d'audience agrégées et respectueuses de la vie privée pour savoir quels outils sont populaires. Nous ne vendons aucune donnée personnelle. Si de la publicité est ajoutée à l'avenir, cette politique sera mise à jour pour la décrire clairement.",
+          heading: "Cookies",
+          body: "Nous utilisons des cookies pour deux raisons : mémoriser vos préférences (comme la langue que vous avez choisie) et — uniquement après que vous avez accepté notre bandeau de cookies — la mesure d'audience et la publicité. Vous pouvez refuser les cookies non essentiels et chaque outil continue de fonctionner pleinement.",
+        },
+        {
+          heading: "Publicité",
+          body: "Nous affichons des annonces de Google AdSense pour que FileTools reste gratuit. Google et ses partenaires peuvent utiliser des cookies pour diffuser des annonces en fonction de vos visites antérieures sur ce site et sur d'autres sites web. Les annonces ne se chargent qu'après que vous avez accepté les cookies. Vous pouvez gérer la publicité personnalisée dans les paramètres des annonces de Google (adssettings.google.com).",
+        },
+        {
+          heading: "Liens affiliés",
+          body: "Certaines pages contiennent des liens affiliés vers des produits tiers, tels que des logiciels de bureau. Si vous cliquez sur l'un d'eux et effectuez un achat, nous pouvons percevoir une commission, sans coût supplémentaire pour vous. Ces liens sont signalés sur la page et n'affectent jamais nos outils gratuits dans le navigateur.",
+        },
+        {
+          heading: "Mesure d'audience",
+          body: "Nous pouvons utiliser des statistiques d'audience agrégées et respectueuses de la vie privée pour savoir quels outils sont populaires. Cela n'inclut jamais le contenu de vos fichiers, qui ne nous sont jamais envoyés. Nous ne vendons pas vos données personnelles.",
+        },
+        {
+          heading: "Vos choix",
+          body: "Vous pouvez accepter ou refuser les cookies non essentiels à tout moment via le bandeau de cookies, et utiliser les paramètres de votre navigateur ou les paramètres des annonces de Google pour limiter la personnalisation de la publicité.",
         },
         {
           heading: "Contact",
@@ -148,6 +165,29 @@ const fr: DeepPartial<Messages> = {
       filesHeading: "Une remarque sur les fichiers",
       filesBody:
         "Merci de ne pas nous envoyer vos fichiers par e-mail. Chaque outil s'exécute entièrement dans votre navigateur ; nous ne pouvons donc pas y accéder et n'en aurons pas besoin pour vous aider.",
+    },
+    about: {
+      title: "À propos de FileTools",
+      intro:
+        "FileTools est une collection gratuite d'outils axés sur la confidentialité pour travailler avec des PDF et des images — le tout fonctionnant entièrement dans votre navigateur.",
+      sections: [
+        {
+          heading: "Notre mission",
+          body: "Nous voulons que les tâches quotidiennes sur vos fichiers — fusionner des PDF, convertir des images, compresser des fichiers — soient rapides, gratuites et privées, sans vous obliger à téléverser des documents sensibles sur le serveur de quelqu'un d'autre.",
+        },
+        {
+          heading: "Ce qui nous distingue",
+          body: "Chaque outil s'exécute sous forme de code côté client sur votre propre appareil. Vos fichiers ne quittent jamais votre navigateur, il n'y a pas d'inscription et rien n'est stocké. Ce que vous faites ici reste sur votre ordinateur.",
+        },
+        {
+          heading: "Comment nous restons gratuits",
+          body: "FileTools est financé par des publicités discrètes et des liens affiliés occasionnels vers des outils que nous trouvons réellement utiles. Cela nous permet de garder chaque outil gratuit pour tout le monde. Consultez notre politique de confidentialité pour plus de détails.",
+        },
+        {
+          heading: "Nous contacter",
+          body: "Vous avez repéré un bug, une idée ou un outil que vous aimeriez voir exister ? Visitez notre page de contact — nous serions ravis d'avoir de vos nouvelles.",
+        },
+      ],
     },
   },
 };

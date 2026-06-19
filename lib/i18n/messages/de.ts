@@ -14,6 +14,7 @@ const de: DeepPartial<Messages> = {
     privacy: "Datenschutz",
     terms: "AGB",
     contact: "Kontakt",
+    about: "Über uns",
     support: "Unterstützen",
   },
   home: {
@@ -100,8 +101,24 @@ const de: DeepPartial<Messages> = {
           body: "Jedes Tool auf FileTools läuft vollständig als clientseitiges JavaScript. Wenn Sie eine Datei auswählen, wird sie in den Speicher Ihres Browsers eingelesen, auf Ihrem eigenen Gerät verarbeitet und Ihnen als Download wieder angeboten. Es werden niemals Dateidaten an einen Server übertragen.",
         },
         {
-          heading: "Analyse und Cookies",
-          body: "Wir verwenden möglicherweise datenschutzfreundliche, aggregierte Analysen, um zu verstehen, welche Tools beliebt sind. Wir verkaufen keine personenbezogenen Daten. Sollte künftig Werbung hinzukommen, wird diese Erklärung aktualisiert, um sie klar zu beschreiben.",
+          heading: "Cookies",
+          body: "Wir verwenden Cookies für zwei Zwecke: um Ihre Einstellungen zu speichern (etwa Ihre gewählte Sprache) und — erst nachdem Sie unser Cookie-Banner akzeptiert haben — für Analysen und Werbung. Sie können nicht notwendige Cookies ablehnen, und jedes Tool funktioniert weiterhin vollständig.",
+        },
+        {
+          heading: "Werbung",
+          body: "Wir zeigen Anzeigen von Google AdSense, um FileTools kostenlos zu halten. Google und seine Partner verwenden möglicherweise Cookies, um Anzeigen auf Grundlage Ihrer früheren Besuche auf dieser und anderen Websites auszuspielen. Anzeigen werden erst geladen, nachdem Sie Cookies akzeptiert haben. Personalisierte Werbung können Sie in den Anzeigeneinstellungen von Google steuern (adssettings.google.com).",
+        },
+        {
+          heading: "Affiliate-Links",
+          body: "Einige Seiten enthalten Affiliate-Links zu Produkten von Drittanbietern, etwa Desktop-Software. Wenn Sie auf einen solchen Link klicken und einen Kauf tätigen, erhalten wir möglicherweise eine Provision — ohne Mehrkosten für Sie. Diese Links werden auf der Seite gekennzeichnet und beeinflussen niemals unsere kostenlosen Tools im Browser.",
+        },
+        {
+          heading: "Analyse",
+          body: "Wir verwenden möglicherweise datenschutzfreundliche, aggregierte Analysen, um zu verstehen, welche Tools beliebt sind. Dies umfasst niemals die Inhalte Ihrer Dateien, die uns niemals übermittelt werden. Wir verkaufen keine personenbezogenen Daten.",
+        },
+        {
+          heading: "Ihre Wahlmöglichkeiten",
+          body: "Sie können nicht notwendige Cookies jederzeit über das Cookie-Banner akzeptieren oder ablehnen und Ihre Browser-Einstellungen oder die Anzeigeneinstellungen von Google nutzen, um die Personalisierung von Werbung einzuschränken.",
         },
         {
           heading: "Kontakt",
@@ -148,6 +165,29 @@ const de: DeepPartial<Messages> = {
       filesHeading: "Ein Hinweis zu Dateien",
       filesBody:
         "Bitte senden Sie uns Ihre Dateien nicht per E-Mail. Jedes Tool läuft vollständig in Ihrem Browser, daher können wir nicht darauf zugreifen und benötigen sie auch nicht, um zu helfen.",
+    },
+    about: {
+      title: "Über FileTools",
+      intro:
+        "FileTools ist eine kostenlose Sammlung datenschutzorientierter Tools für die Arbeit mit PDFs und Bildern — alle laufen vollständig in Ihrem Browser.",
+      sections: [
+        {
+          heading: "Unsere Mission",
+          body: "Wir möchten, dass alltägliche Dateiaufgaben — PDFs zusammenführen, Bilder konvertieren, Dateien komprimieren — schnell, kostenlos und privat sind, ohne dass Sie vertrauliche Dokumente auf den Server eines anderen hochladen müssen.",
+        },
+        {
+          heading: "Was uns unterscheidet",
+          body: "Jedes Tool läuft als clientseitiger Code auf Ihrem eigenen Gerät. Ihre Dateien verlassen niemals Ihren Browser, es gibt keine Anmeldung, und nichts wird gespeichert. Was Sie hier tun, bleibt auf Ihrem Computer.",
+        },
+        {
+          heading: "Wie wir es kostenlos halten",
+          body: "FileTools wird durch unaufdringliche Anzeigen und gelegentliche Affiliate-Links zu Tools finanziert, die wir wirklich nützlich finden. So können wir jedes Tool für alle kostenlos halten. Einzelheiten finden Sie in unserer Datenschutzerklärung.",
+        },
+        {
+          heading: "Kontakt aufnehmen",
+          body: "Haben Sie einen Fehler entdeckt, eine Idee oder wünschen Sie sich ein Tool, das es noch nicht gibt? Besuchen Sie unsere Kontaktseite — wir freuen uns, von Ihnen zu hören.",
+        },
+      ],
     },
   },
 };

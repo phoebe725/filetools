@@ -15,6 +15,7 @@ const en = {
     privacy: "Privacy",
     terms: "Terms",
     contact: "Contact",
+    about: "About",
     support: "Support us",
   },
   home: {
@@ -109,8 +110,24 @@ const en = {
           body: "Every tool on FileTools runs entirely as client-side JavaScript. When you select a file, it is read into your browser's memory, processed on your own device, and offered back to you as a download. No file data is ever transmitted to a server.",
         },
         {
-          heading: "Analytics and cookies",
-          body: "We may use privacy-friendly, aggregate analytics to understand which tools are popular. We do not sell personal data. If advertising is added in the future, this policy will be updated to describe it clearly.",
+          heading: "Cookies",
+          body: "We use cookies for two things: remembering your preferences (such as your chosen language), and — only after you accept our cookie banner — analytics and advertising. You can reject non-essential cookies and every tool still works fully.",
+        },
+        {
+          heading: "Advertising",
+          body: "We show ads from Google AdSense to keep FileTools free. Google and its partners may use cookies to serve ads based on your prior visits to this and other websites. Ads load only after you accept cookies. You can control personalised advertising in Google's Ads Settings (adssettings.google.com).",
+        },
+        {
+          heading: "Affiliate links",
+          body: "Some pages contain affiliate links to third-party products, such as desktop software. If you click one and make a purchase, we may earn a commission at no extra cost to you. These links are disclosed on the page and never affect our free in-browser tools.",
+        },
+        {
+          heading: "Analytics",
+          body: "We may use privacy-friendly, aggregate analytics to understand which tools are popular. This never includes the contents of your files, which are never sent to us. We do not sell your personal data.",
+        },
+        {
+          heading: "Your choices",
+          body: "You can accept or reject non-essential cookies at any time through the cookie banner, and use your browser settings or Google's Ads Settings to limit ad personalisation.",
         },
         {
           heading: "Contact",
@@ -157,6 +174,29 @@ const en = {
       filesHeading: "A note on files",
       filesBody:
         "Please don't email us your files. Every tool runs entirely in your browser, so we can't access them and won't need them to help.",
+    },
+    about: {
+      title: "About FileTools",
+      intro:
+        "FileTools is a free collection of privacy-first tools for working with PDFs and images — all running entirely in your browser.",
+      sections: [
+        {
+          heading: "Our mission",
+          body: "We want everyday file tasks — merging PDFs, converting images, compressing files — to be fast, free, and private, without forcing you to upload sensitive documents to someone else's server.",
+        },
+        {
+          heading: "How it's different",
+          body: "Every tool runs as client-side code on your own device. Your files never leave your browser, there's no sign-up, and nothing is stored. What you do here stays on your computer.",
+        },
+        {
+          heading: "How we keep it free",
+          body: "FileTools is funded by unobtrusive ads and occasional affiliate links to tools we genuinely find useful. That lets us keep every tool free for everyone. See our Privacy Policy for the details.",
+        },
+        {
+          heading: "Get in touch",
+          body: "Have a bug, an idea, or a tool you wish existed? Visit our Contact page — we'd love to hear from you.",
+        },
+      ],
     },
   },
 };

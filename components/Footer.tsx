@@ -10,6 +10,7 @@ interface FooterProps {
     privacy: string;
     terms: string;
     contact: string;
+    about: string;
     support: string;
   };
 }
@@ -29,6 +30,9 @@ export function Footer({ locale, t }: FooterProps) {
         <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
           <Link href={`/${locale}`} className="hover:text-slate-900">
             {t.home}
+          </Link>
+          <Link href={`/${locale}/about`} className="hover:text-slate-900">
+            {t.about}
           </Link>
           <Link href={`/${locale}/privacy`} className="hover:text-slate-900">
             {t.privacy}

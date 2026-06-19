@@ -6,7 +6,7 @@ export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
-  const staticPaths = ["", "/privacy", "/terms", "/contact"];
+  const staticPaths = ["", "/about", "/privacy", "/terms", "/contact"];
 
   for (const locale of locales) {
     for (const path of staticPaths) {
