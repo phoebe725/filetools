@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { locales, defaultLocale, localeNames, SITE_URL } from "@/lib/i18n/config";
+import { siteConfig } from "@/lib/site-config";
 import { getMessages } from "@/lib/i18n/messages";
 import { getToolContent } from "@/lib/i18n/tool-content";
 import { toolsByCategory, type ToolCategory } from "@/lib/tools";
@@ -44,6 +45,15 @@ export default function RootRedirect() {
         <meta name="description" content={t.home.subtitle} />
         {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script dangerouslySetInnerHTML={{ __html: detectScript }} />
+        {siteConfig.adsense.client && (
+          // AdSense loader on the root document too, so verification finds it here.
+          // eslint-disable-next-line @next/next/no-sync-scripts
+          <script
+            async
+            crossOrigin="anonymous"
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteConfig.adsense.client}`}
+          />
+        )}
       </head>
       <body className="bg-white text-slate-800">
         <main className="mx-auto max-w-4xl px-4 py-12">

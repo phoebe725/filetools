@@ -6,6 +6,7 @@
 
 import { AdSense } from "./AdSense";
 import { useConsent } from "./consent/ConsentContext";
+import { siteConfig } from "@/lib/site-config";
 
 export type AdPlacement =
   | "tool-top"
@@ -13,13 +14,16 @@ export type AdPlacement =
   | "content-inline"
   | "sidebar";
 
-const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
+const ADSENSE_CLIENT =
+  process.env.NEXT_PUBLIC_ADSENSE_CLIENT || siteConfig.adsense.client;
 
+// Slot ids: env var wins, else the central config. A slot stays empty until you
+// create the matching Display ad unit in AdSense — an empty slot renders nothing.
 const SLOTS: Record<AdPlacement, string | undefined> = {
-  "tool-top": process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOP,
-  "tool-bottom": process.env.NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM,
-  "content-inline": process.env.NEXT_PUBLIC_ADSENSE_SLOT_INLINE,
-  sidebar: process.env.NEXT_PUBLIC_ADSENSE_SLOT_SIDEBAR,
+  "tool-top": process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOP || siteConfig.adsense.slots.top,
+  "tool-bottom": process.env.NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM || siteConfig.adsense.slots.bottom,
+  "content-inline": process.env.NEXT_PUBLIC_ADSENSE_SLOT_INLINE || siteConfig.adsense.slots.inline,
+  sidebar: process.env.NEXT_PUBLIC_ADSENSE_SLOT_SIDEBAR || siteConfig.adsense.slots.sidebar,
 };
 
 // Fixed, reserved dimensions per placement (prevents cumulative layout shift).
