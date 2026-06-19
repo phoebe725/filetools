@@ -69,8 +69,7 @@ export function matchLocale(tag: string): Locale | null {
   );
 }
 
-// Absolute site URL used for canonical/hreflang/sitemap. Includes the GitHub
-// Pages base path at build time; change this one constant when moving to a
-// custom domain. (Only read server-side at build.)
-const BASE_PATH = process.env.GITHUB_PAGES === "true" ? "/filetools" : "";
-export const SITE_URL = `https://phoebe725.github.io${BASE_PATH}`;
+// Absolute site URL used for canonical/hreflang/sitemap. The site is served
+// from the root of the custom domain pdffiletool.xyz — change this one constant
+// if the domain ever changes. (Only read server-side at build.)
+export const SITE_URL = "https://pdffiletool.xyz";

@@ -5,7 +5,7 @@ import "./globals.css";
 // (so the lang attribute is locale-correct), and the root redirect page renders
 // its own document.
 export const metadata: Metadata = {
-  metadataBase: new URL("https://phoebe725.github.io/filetools"),
+  metadataBase: new URL("https://pdffiletool.xyz"),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

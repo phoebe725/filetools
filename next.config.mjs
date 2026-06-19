@@ -1,15 +1,11 @@
-// GitHub Pages serves a project site under /<repo>/, so we set basePath there.
-// On Vercel/Cloudflare/local the site lives at the root, so basePath stays empty.
-const isGithubPages = process.env.GITHUB_PAGES === "true";
-const repo = "filetools";
-const basePath = isGithubPages ? `/${repo}` : "";
+// Served from the ROOT of the custom domain pdffiletool.xyz (previously the
+// GitHub Pages project subpath /filetools/, now retired). With no basePath /
+// assetPrefix, every asset and link resolves from "/".
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Fully static export — no backend, deployable to GitHub Pages / Cloudflare / Vercel.
   output: "export",
-  basePath: basePath || undefined,
-  assetPrefix: basePath ? `${basePath}/` : undefined,
   images: {
     unoptimized: true,
   },
