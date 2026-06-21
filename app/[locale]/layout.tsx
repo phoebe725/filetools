@@ -6,6 +6,7 @@ import { I18nProvider } from "@/components/I18nProvider";
 import { ConsentProvider } from "@/components/consent/ConsentContext";
 import { CookieConsent } from "@/components/consent/CookieConsent";
 import { AdScripts } from "@/components/consent/AdScripts";
+import { GoogleAnalytics } from "@/components/consent/GoogleAnalytics";
 import { LocaleSuggest } from "@/components/LocaleSuggest";
 import { locales, isLocale, htmlLang, defaultLocale, SITE_URL } from "@/lib/i18n/config";
 import { getMessages } from "@/lib/i18n/messages";
@@ -51,6 +52,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
         <I18nProvider locale={locale} messages={messages}>
           <ConsentProvider>
             <AdScripts />
+            <GoogleAnalytics />
             <LocaleSuggest />
             <Nav locale={locale} t={messages.nav} />
             <main className="flex-1">{children}</main>

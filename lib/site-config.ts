@@ -33,6 +33,13 @@ export const siteConfig = {
   partners: {
     pcloud: "https://partner.pcloud.com/r/156179" as string,
   },
+
+  /** Google Analytics 4. The measurement id is PUBLIC. Empty disables analytics.
+   *  GA only loads AFTER the visitor accepts the cookie banner (see
+   *  components/consent/GoogleAnalytics.tsx), per our privacy policy. */
+  analytics: {
+    ga4: "G-3QPBN25KSS" as string,
+  },
 } as const;
 
 /** Resolved Ko-fi URL, or null when no username is configured yet. */
