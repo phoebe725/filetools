@@ -6,6 +6,7 @@ import { FileList, type FileListItem } from "../FileList";
 import { ErrorState } from "../ErrorState";
 import { ProgressBar } from "../ProgressBar";
 import { ActionButton } from "../DownloadButton";
+import { ResultPartnerCTA } from "../ResultPartnerCTA";
 import { downloadBlob, withExtension } from "@/lib/files";
 import type { RenderedPage } from "@/lib/pdf-render";
 
@@ -192,6 +193,7 @@ export default function PdfToImages() {
               </div>
             ))}
           </div>
+          <ResultPartnerCTA />
         </div>
       )}
     </div>

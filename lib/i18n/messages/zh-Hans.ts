@@ -15,7 +15,9 @@ const zhHans: DeepPartial<Messages> = {
     terms: "条款",
     contact: "联系我们",
     about: "关于",
-    support: "支持我们",
+    support: "请我喝杯咖啡",
+    recommended: "推荐工具",
+    pcloud: "pCloud — 云端存储",
   },
   home: {
     title: "免费、私密的文件工具",
@@ -66,10 +68,15 @@ const zhHans: DeepPartial<Messages> = {
     notifyThanks: "谢谢！我们会与你联系。（这只是界面演示，不会被存储。）",
   },
   affiliate: {
-    disclosure: "本页面上的部分链接为联盟推广链接。如果你通过它们购买，我们可能会获得佣金，而你无需支付额外费用。",
+    disclosure: "部分链接为合作伙伴链接。如果你通过这些链接购买，我们可能会获得少量佣金，你无需支付额外费用。",
     ctaHeading: "需要每次都完美转换？",
     ctaBody: "这款浏览器内工具是免费的，并会尽力转换。如果你需要处理复杂或大型文件并获得像素级完美的结果，专用的桌面应用能做到更多。",
     ctaButton: "查看推荐工具",
+    pcloud: {
+      heading: "妥善保存你的文件",
+      body: "想保存转换后的文件吗？用 pCloud 获得终身云端存储空间，一次付费，永久拥有。",
+      button: "获取 pCloud 终身方案",
+    },
   },
   consent: {
     message: "我们使用 Cookie 进行分析，未来也可能用于广告。你可以接受或拒绝非必要的 Cookie。",

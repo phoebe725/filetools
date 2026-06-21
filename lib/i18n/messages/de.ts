@@ -15,7 +15,9 @@ const de: DeepPartial<Messages> = {
     terms: "AGB",
     contact: "Kontakt",
     about: "Über uns",
-    support: "Unterstützen",
+    support: "Spendier mir einen Kaffee",
+    recommended: "Empfohlene Tools",
+    pcloud: "pCloud — Cloud-Speicher",
   },
   home: {
     title: "Kostenlose, private Datei-Tools",
@@ -66,10 +68,15 @@ const de: DeepPartial<Messages> = {
     notifyThanks: "Danke! Wir melden uns. (Dies ist eine UI-Demo und wird nicht gespeichert.)",
   },
   affiliate: {
-    disclosure: "Einige Links auf dieser Seite sind Affiliate-Links. Wenn Sie darüber etwas kaufen, erhalten wir möglicherweise eine Provision — ohne Mehrkosten für Sie.",
+    disclosure: "Einige Links sind Partner-Links — wenn Sie darüber etwas kaufen, erhalten wir möglicherweise eine kleine Provision, ohne Mehrkosten für Sie.",
     ctaHeading: "Brauchen Sie jedes Mal eine perfekte Konvertierung?",
     ctaBody: "Dieses Tool im Browser ist kostenlos und liefert das bestmögliche Ergebnis. Für pixelgenaue Resultate bei komplexen oder großen Dateien kann eine spezielle Desktop-App mehr leisten.",
     ctaButton: "Empfohlenes Tool ansehen",
+    pcloud: {
+      heading: "Bewahren Sie Ihre Dateien sicher auf",
+      body: "Möchten Sie Ihre konvertierten Dateien speichern? Sichern Sie sich lebenslangen Cloud-Speicher mit pCloud — einmal zahlen, für immer behalten.",
+      button: "pCloud Lifetime holen",
+    },
   },
   consent: {
     message: "Wir verwenden Cookies für Analysen und künftig auch für Werbung. Sie können nicht notwendige Cookies akzeptieren oder ablehnen.",

@@ -2,6 +2,7 @@
 
 import { downloadBlob, formatBytes } from "@/lib/files";
 import { useWidgets } from "@/components/I18nProvider";
+import { ResultPartnerCTA } from "./ResultPartnerCTA";
 
 interface DownloadResultProps {
   blob: Blob;
@@ -55,6 +56,7 @@ export function DownloadResult({
           </button>
         )}
       </div>
+      <ResultPartnerCTA />
     </div>
   );
 }

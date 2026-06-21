@@ -26,6 +26,13 @@ export const siteConfig = {
     client: "ca-pub-4850580320405062" as string,
     slots: { top: "", bottom: "", inline: "", sidebar: "" },
   },
+
+  /** Global affiliate partners (not per-tool — those live in lib/affiliate.ts).
+   *  An empty string hides that partner's CTAs everywhere. All outbound partner
+   *  links carry rel="sponsored noopener". */
+  partners: {
+    pcloud: "https://partner.pcloud.com/r/156179" as string,
+  },
 } as const;
 
 /** Resolved Ko-fi URL, or null when no username is configured yet. */

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n/config";
-import { donateUrl } from "@/lib/site-config";
+import { donateUrl, siteConfig } from "@/lib/site-config";
+import { getMessages } from "@/lib/i18n/messages";
+import { AffiliateDisclosure } from "@/components/affiliate/AffiliateDisclosure";
 
 interface FooterProps {
   locale: Locale;
@@ -12,12 +14,16 @@ interface FooterProps {
     contact: string;
     about: string;
     support: string;
+    recommended: string;
+    pcloud: string;
   };
 }
 
 export function Footer({ locale, t }: FooterProps) {
   // Renders only when a Ko-fi username is set in lib/site-config.ts.
   const kofi = donateUrl();
+  const pcloud = siteConfig.partners.pcloud;
+  const disclosure = getMessages(locale).affiliate.disclosure;
 
   return (
     <footer className="border-t border-slate-200 bg-white">
@@ -56,6 +62,26 @@ export function Footer({ locale, t }: FooterProps) {
           )}
         </div>
       </div>
+
+      {pcloud && (
+        <div className="container-page border-t border-slate-100 py-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+            {t.recommended}
+          </p>
+          <a
+            href={pcloud}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+            data-network="pcloud"
+            className="mt-2 inline-block text-sm text-slate-600 hover:text-slate-900"
+          >
+            ☁️ {t.pcloud}
+          </a>
+          <div className="mt-3 max-w-2xl">
+            <AffiliateDisclosure text={disclosure} />
+          </div>
+        </div>
+      )}
     </footer>
   );
 }

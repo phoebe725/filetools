@@ -15,7 +15,9 @@ const zhHant: DeepPartial<Messages> = {
     terms: "服務條款",
     contact: "聯絡我們",
     about: "關於",
-    support: "支持我們",
+    support: "請我喝杯咖啡",
+    recommended: "推薦工具",
+    pcloud: "pCloud — 雲端儲存",
   },
   home: {
     title: "免費、私密的檔案工具",
@@ -66,10 +68,15 @@ const zhHant: DeepPartial<Messages> = {
     notifyThanks: "謝謝！我們會再與你聯繫。（這只是 UI 示範，不會被儲存。）",
   },
   affiliate: {
-    disclosure: "本頁部分連結為聯盟行銷連結。若你透過這些連結購買，我們可能會獲得佣金，但你不需支付任何額外費用。",
+    disclosure: "部分連結為合作夥伴連結。若你透過這些連結購買，我們可能會獲得少量佣金，但你不需支付任何額外費用。",
     ctaHeading: "需要每次都完美的轉換結果嗎？",
     ctaBody: "這個瀏覽器內工具免費且盡力而為。若你需要在複雜或大型檔案上獲得像素級完美的結果，專屬的桌面應用程式能做得更多。",
     ctaButton: "查看推薦工具",
+    pcloud: {
+      heading: "妥善保存你的檔案",
+      body: "想保存轉換後的檔案嗎？用 pCloud 取得終身雲端儲存空間，一次付費，永久擁有。",
+      button: "取得 pCloud 終身方案",
+    },
   },
   consent: {
     message: "我們使用 Cookie 進行分析，未來也可能用於廣告。你可以接受或拒絕非必要的 Cookie。",

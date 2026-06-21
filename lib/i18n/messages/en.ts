@@ -16,7 +16,9 @@ const en = {
     terms: "Terms",
     contact: "Contact",
     about: "About",
-    support: "Support us",
+    support: "Buy me a coffee",
+    recommended: "Recommended tools",
+    pcloud: "pCloud — cloud storage",
   },
   home: {
     title: "Free, private file tools",
@@ -71,11 +73,16 @@ const en = {
   // Affiliate / partner copy (Prompt B). Shown only on hard-feature pages.
   affiliate: {
     disclosure:
-      "Some links on this page are affiliate links. If you buy through them we may earn a commission, at no extra cost to you.",
+      "Some links are partner links — if you buy through them we may earn a small commission, at no extra cost to you.",
     ctaHeading: "Need a perfect conversion every time?",
     ctaBody:
       "This in-browser tool is free and best-effort. For pixel-perfect results on complex or large files, a dedicated desktop app can do more.",
     ctaButton: "See recommended tool",
+    pcloud: {
+      heading: "Keep your files safe",
+      body: "Want to store your converted files? Get lifetime cloud storage with pCloud — pay once, keep forever.",
+      button: "Get pCloud Lifetime",
+    },
   },
   // Cookie-consent banner (CMP). Ads/analytics load only after acceptance.
   consent: {

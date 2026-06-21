@@ -15,7 +15,9 @@ const pt: DeepPartial<Messages> = {
     terms: "Termos",
     contact: "Contato",
     about: "Sobre",
-    support: "Apoie-nos",
+    support: "Pague-me um café",
+    recommended: "Ferramentas recomendadas",
+    pcloud: "pCloud — armazenamento na nuvem",
   },
   home: {
     title: "Ferramentas de arquivo gratuitas e privadas",
@@ -66,10 +68,15 @@ const pt: DeepPartial<Messages> = {
     notifyThanks: "Obrigado! Entraremos em contato. (Isto é uma demonstração de interface e não é armazenado.)",
   },
   affiliate: {
-    disclosure: "Alguns links nesta página são links de afiliados. Se você comprar por meio deles, podemos receber uma comissão, sem custo adicional para você.",
+    disclosure: "Alguns links são links de parceiros — se você comprar por meio deles, podemos ganhar uma pequena comissão, sem custo adicional para você.",
     ctaHeading: "Precisa de uma conversão perfeita sempre?",
     ctaBody: "Esta ferramenta no navegador é gratuita e faz o melhor esforço. Para resultados perfeitos em arquivos complexos ou grandes, um aplicativo de desktop dedicado pode fazer mais.",
     ctaButton: "Ver ferramenta recomendada",
+    pcloud: {
+      heading: "Mantenha seus arquivos seguros",
+      body: "Quer guardar seus arquivos convertidos? Tenha armazenamento na nuvem vitalício com o pCloud — pague uma vez e use para sempre.",
+      button: "Obter pCloud Lifetime",
+    },
   },
   consent: {
     message: "Usamos cookies para análises e, no futuro, para publicidade. Você pode aceitar ou recusar os cookies não essenciais.",

@@ -15,7 +15,9 @@ const fr: DeepPartial<Messages> = {
     terms: "Conditions",
     contact: "Contact",
     about: "À propos",
-    support: "Nous soutenir",
+    support: "Offrez-moi un café",
+    recommended: "Outils recommandés",
+    pcloud: "pCloud — stockage cloud",
   },
   home: {
     title: "Outils de fichiers gratuits et privés",
@@ -66,10 +68,15 @@ const fr: DeepPartial<Messages> = {
     notifyThanks: "Merci ! Nous vous tiendrons au courant. (Ceci est une démo d'interface et n'est pas enregistré.)",
   },
   affiliate: {
-    disclosure: "Certains liens sur cette page sont des liens affiliés. Si vous achetez par leur intermédiaire, nous pouvons percevoir une commission, sans coût supplémentaire pour vous.",
+    disclosure: "Certains liens sont des liens partenaires — si vous achetez par leur intermédiaire, nous pouvons percevoir une petite commission, sans coût supplémentaire pour vous.",
     ctaHeading: "Besoin d'une conversion parfaite à chaque fois ?",
     ctaBody: "Cet outil en ligne est gratuit et fonctionne au mieux. Pour des résultats parfaits au pixel près sur des fichiers complexes ou volumineux, une application de bureau dédiée peut en faire davantage.",
     ctaButton: "Voir l'outil recommandé",
+    pcloud: {
+      heading: "Gardez vos fichiers en sécurité",
+      body: "Vous voulez conserver vos fichiers convertis ? Obtenez un stockage cloud à vie avec pCloud — payez une fois, gardez pour toujours.",
+      button: "Obtenir pCloud Lifetime",
+    },
   },
   consent: {
     message: "Nous utilisons des cookies pour les statistiques et, à l'avenir, pour la publicité. Vous pouvez accepter ou refuser les cookies non essentiels.",

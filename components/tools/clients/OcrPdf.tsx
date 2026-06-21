@@ -6,6 +6,7 @@ import { FileList, type FileListItem } from "../FileList";
 import { ErrorState } from "../ErrorState";
 import { ProgressBar } from "../ProgressBar";
 import { ActionButton } from "../DownloadButton";
+import { ResultPartnerCTA } from "../ResultPartnerCTA";
 import { downloadBlob } from "@/lib/files";
 
 const MAX_SIZE = 60 * 1024 * 1024;
@@ -180,6 +181,7 @@ export default function OcrPdf() {
           >
             Start over
           </button>
+          <ResultPartnerCTA />
         </div>
       )}
     </div>
