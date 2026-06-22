@@ -18,6 +18,7 @@ const pt: DeepPartial<Messages> = {
     support: "Pague-me um café",
     recommended: "Ferramentas recomendadas",
     pcloud: "pCloud — armazenamento na nuvem",
+    amazon: "Armazenamento e acessórios na Amazon",
   },
   home: {
     title: "Ferramentas de arquivo gratuitas e privadas",

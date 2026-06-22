@@ -32,6 +32,9 @@ export const siteConfig = {
    *  links carry rel="sponsored noopener". */
   partners: {
     pcloud: "https://partner.pcloud.com/r/156179" as string,
+    // Amazon Associates (tag pdffiletool-20). Links to a relevant search page so
+    // it ties into the "store your files" context. Empty disables the link.
+    amazon: "https://www.amazon.com/s?k=portable+ssd&tag=pdffiletool-20" as string,
   },
 
   /** Google Analytics 4. The measurement id is PUBLIC. Empty disables analytics.

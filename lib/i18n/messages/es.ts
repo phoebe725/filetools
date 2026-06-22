@@ -18,6 +18,7 @@ const es: DeepPartial<Messages> = {
     support: "Invítame a un café",
     recommended: "Herramientas recomendadas",
     pcloud: "pCloud — almacenamiento en la nube",
+    amazon: "Almacenamiento y accesorios en Amazon",
   },
   home: {
     title: "Herramientas de archivos gratis y privadas",

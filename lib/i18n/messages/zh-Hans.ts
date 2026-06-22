@@ -18,6 +18,7 @@ const zhHans: DeepPartial<Messages> = {
     support: "请我喝杯咖啡",
     recommended: "推荐工具",
     pcloud: "pCloud — 云端存储",
+    amazon: "Amazon 上的存储设备与配件",
   },
   home: {
     title: "免费、私密的文件工具",

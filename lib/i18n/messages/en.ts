@@ -19,6 +19,7 @@ const en = {
     support: "Buy me a coffee",
     recommended: "Recommended tools",
     pcloud: "pCloud — cloud storage",
+    amazon: "Storage & accessories on Amazon",
   },
   home: {
     title: "Free, private file tools",

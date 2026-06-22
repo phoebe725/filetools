@@ -18,6 +18,7 @@ const de: DeepPartial<Messages> = {
     support: "Spendier mir einen Kaffee",
     recommended: "Empfohlene Tools",
     pcloud: "pCloud — Cloud-Speicher",
+    amazon: "Speicher & Zubehör bei Amazon",
   },
   home: {
     title: "Kostenlose, private Datei-Tools",

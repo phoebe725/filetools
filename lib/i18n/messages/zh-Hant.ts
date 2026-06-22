@@ -18,6 +18,7 @@ const zhHant: DeepPartial<Messages> = {
     support: "請我喝杯咖啡",
     recommended: "推薦工具",
     pcloud: "pCloud — 雲端儲存",
+    amazon: "Amazon 上的儲存裝置與配件",
   },
   home: {
     title: "免費、私密的檔案工具",

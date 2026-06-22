@@ -18,6 +18,7 @@ const ja: DeepPartial<Messages> = {
     support: "コーヒーをおごる",
     recommended: "おすすめツール",
     pcloud: "pCloud — クラウドストレージ",
+    amazon: "Amazon のストレージ・アクセサリ",
   },
   home: {
     title: "無料でプライベートなファイルツール",

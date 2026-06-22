@@ -16,6 +16,7 @@ interface FooterProps {
     support: string;
     recommended: string;
     pcloud: string;
+    amazon: string;
   };
 }
 
@@ -23,6 +24,7 @@ export function Footer({ locale, t }: FooterProps) {
   // Renders only when a Ko-fi username is set in lib/site-config.ts.
   const kofi = donateUrl();
   const pcloud = siteConfig.partners.pcloud;
+  const amazon = siteConfig.partners.amazon;
   const disclosure = getMessages(locale).affiliate.disclosure;
 
   return (
@@ -63,20 +65,35 @@ export function Footer({ locale, t }: FooterProps) {
         </div>
       </div>
 
-      {pcloud && (
+      {(pcloud || amazon) && (
         <div className="container-page border-t border-slate-100 py-6">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
             {t.recommended}
           </p>
-          <a
-            href={pcloud}
-            target="_blank"
-            rel="sponsored noopener noreferrer"
-            data-network="pcloud"
-            className="mt-2 inline-block text-sm text-slate-600 hover:text-slate-900"
-          >
-            ☁️ {t.pcloud}
-          </a>
+          <div className="mt-2 flex flex-col gap-1">
+            {pcloud && (
+              <a
+                href={pcloud}
+                target="_blank"
+                rel="sponsored noopener noreferrer"
+                data-network="pcloud"
+                className="inline-block text-sm text-slate-600 hover:text-slate-900"
+              >
+                ☁️ {t.pcloud}
+              </a>
+            )}
+            {amazon && (
+              <a
+                href={amazon}
+                target="_blank"
+                rel="sponsored noopener noreferrer"
+                data-network="amazon"
+                className="inline-block text-sm text-slate-600 hover:text-slate-900"
+              >
+                🛒 {t.amazon}
+              </a>
+            )}
+          </div>
           <div className="mt-3 max-w-2xl">
             <AffiliateDisclosure text={disclosure} />
           </div>
