@@ -90,6 +90,16 @@ const zhHant: DeepPartial<Messages> = {
     accept: "切換至 {lang}",
     dismiss: "不用了，謝謝",
   },
+  guides: {
+    nav: "指南",
+    indexTitle: "指南",
+    indexSubtitle:
+      "實用、直接的 PDF 與圖片操作教學，每一篇都使用完全在你瀏覽器中執行的免費工具。",
+    readGuide: "閱讀指南",
+    relatedHeading: "本指南用到的工具",
+    backToGuides: "全部指南",
+    faqHeading: "常見問題",
+  },
   notFound: {
     title: "找不到頁面",
     body: "這個工具或頁面（目前）不存在。",

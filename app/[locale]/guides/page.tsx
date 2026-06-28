@@ -5,7 +5,7 @@ import { guidesForLocale, getGuideContent } from "@/lib/guides";
 import { locales, isLocale, defaultLocale, SITE_URL } from "@/lib/i18n/config";
 import { getMessages } from "@/lib/i18n/messages";
 
-// Only build the index for locales that actually have guides (English for now).
+// Only build the index for locales that actually have guides.
 export function generateStaticParams() {
   return locales
     .filter((locale) => guidesForLocale(locale).length > 0)

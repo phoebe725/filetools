@@ -7,25 +7,10 @@
 // text on a localized URL — translations are added locale-by-locale over time.
 
 import type { Locale } from "./i18n/config";
+import type { GuideContent } from "./guide-types";
+import { guideTranslations } from "./i18n/guides";
 
-export interface GuideSection {
-  heading: string;
-  /** Narrative paragraphs. */
-  body?: string[];
-  /** Optional ordered list (rendered as numbered steps). */
-  list?: string[];
-}
-
-export interface GuideContent {
-  title: string; // <title>
-  description: string; // meta description
-  h1: string;
-  /** One-line summary shown on the index card. */
-  excerpt: string;
-  intro: string;
-  sections: GuideSection[];
-  faqs: { q: string; a: string }[];
-}
+export type { GuideSection, GuideContent } from "./guide-types";
 
 export interface Guide {
   slug: string;
@@ -424,19 +409,22 @@ export function getGuide(slug: string): Guide | undefined {
   return GUIDES_BY_SLUG[slug];
 }
 
-/** Resolved content for a locale, falling back to English. */
+/** Resolved content for a locale, falling back to English. English lives in the
+ *  registry; other locales live in lib/i18n/guides/<locale>.ts. */
 export function getGuideContent(slug: string, locale: Locale): GuideContent | null {
   const g = getGuide(slug);
   if (!g) return null;
-  return g.content[locale] ?? g.content.en ?? null;
+  if (locale === "en") return g.content.en ?? null;
+  return guideTranslations[locale]?.[slug] ?? g.content.en ?? null;
 }
 
 /** Whether a guide has real (non-fallback) content for this locale. */
 export function guideHasLocale(slug: string, locale: Locale): boolean {
-  return Boolean(getGuide(slug)?.content[locale]);
+  if (locale === "en") return Boolean(getGuide(slug)?.content.en);
+  return Boolean(guideTranslations[locale]?.[slug]);
 }
 
 /** Guides that have real content for a locale (used for index + static params). */
 export function guidesForLocale(locale: Locale): Guide[] {
-  return GUIDES.filter((g) => Boolean(g.content[locale]));
+  return GUIDES.filter((g) => guideHasLocale(g.slug, locale));
 }

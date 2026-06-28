@@ -90,6 +90,16 @@ const es: DeepPartial<Messages> = {
     accept: "Cambiar a {lang}",
     dismiss: "No, gracias",
   },
+  guides: {
+    nav: "Guías",
+    indexTitle: "Guías",
+    indexSubtitle:
+      "Guías prácticas y sin rodeos para trabajar con PDF e imágenes, cada una con una herramienta gratuita que funciona por completo en tu navegador.",
+    readGuide: "Leer guía",
+    relatedHeading: "Herramientas usadas en esta guía",
+    backToGuides: "Todas las guías",
+    faqHeading: "Preguntas frecuentes",
+  },
   notFound: {
     title: "Página no encontrada",
     body: "Esa herramienta o página no existe (todavía).",

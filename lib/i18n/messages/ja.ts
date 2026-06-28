@@ -95,6 +95,16 @@ const ja: DeepPartial<Messages> = {
     accept: "{lang}に切り替える",
     dismiss: "いいえ、結構です",
   },
+  guides: {
+    nav: "ガイド",
+    indexTitle: "ガイド",
+    indexSubtitle:
+      "PDF や画像を扱うための実用的でわかりやすいハウツー集。すべて、ブラウザだけで動く無料ツールを使います。",
+    readGuide: "ガイドを読む",
+    relatedHeading: "このガイドで使うツール",
+    backToGuides: "すべてのガイド",
+    faqHeading: "よくある質問",
+  },
   notFound: {
     title: "ページが見つかりません",
     body: "そのツールまたはページは（まだ）存在しません。",
