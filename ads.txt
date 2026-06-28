@@ -1,0 +1,4 @@
+# ads.txt — authorises Google AdSense to sell ad space on this domain.
+# Served at https://pdffiletool.xyz/ads.txt. The id below is the "pub-..." form
+# of the AdSense publisher id (ca-pub-4850580320405062).
+google.com, pub-4850580320405062, DIRECT, f08c47fec0942fa0
