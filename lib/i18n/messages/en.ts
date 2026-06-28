@@ -99,6 +99,16 @@ const en = {
     accept: "Switch to {lang}",
     dismiss: "No thanks",
   },
+  guides: {
+    nav: "Guides",
+    indexTitle: "Guides",
+    indexSubtitle:
+      "Practical, no-nonsense how-tos for working with PDFs and images — every one using a free tool that runs entirely in your browser.",
+    readGuide: "Read guide",
+    relatedHeading: "Tools used in this guide",
+    backToGuides: "All guides",
+    faqHeading: "Frequently asked questions",
+  },
   notFound: {
     title: "Page not found",
     body: "That tool or page doesn't exist (yet).",

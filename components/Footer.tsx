@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Locale } from "@/lib/i18n/config";
 import { donateUrl, siteConfig } from "@/lib/site-config";
 import { getMessages } from "@/lib/i18n/messages";
+import { guidesForLocale } from "@/lib/guides";
 import { AffiliateDisclosure } from "@/components/affiliate/AffiliateDisclosure";
 
 interface FooterProps {
@@ -25,7 +26,9 @@ export function Footer({ locale, t }: FooterProps) {
   const kofi = donateUrl();
   const pcloud = siteConfig.partners.pcloud;
   const amazon = siteConfig.partners.amazon;
-  const disclosure = getMessages(locale).affiliate.disclosure;
+  const messages = getMessages(locale);
+  const disclosure = messages.affiliate.disclosure;
+  const hasGuides = guidesForLocale(locale).length > 0;
 
   return (
     <footer className="border-t border-slate-200 bg-white">
@@ -39,6 +42,11 @@ export function Footer({ locale, t }: FooterProps) {
           <Link href={`/${locale}`} className="hover:text-slate-900">
             {t.home}
           </Link>
+          {hasGuides && (
+            <Link href={`/${locale}/guides`} className="hover:text-slate-900">
+              {messages.guides.nav}
+            </Link>
+          )}
           <Link href={`/${locale}/about`} className="hover:text-slate-900">
             {t.about}
           </Link>
